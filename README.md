@@ -45,6 +45,14 @@ A separate optional TAIS visual asset pack may be offered in the future under it
 
 > **Funding status:** GitHub Sponsors onboarding and payment settlement are not yet confirmed. No payment credentials are collected by the plugin.
 
+## Find TAIS in the Zotero community market
+
+A submission has been opened with the community-maintained [Zotero Add-ons Scraper](https://github.com/syt2/zotero-addons-scraper) used by the [Add-on Market for Zotero](https://github.com/syt2/zotero-addons). **Maintainer review is pending**; the plugin is not yet listed in that market.
+
+[Track the marketplace submission](https://github.com/syt2/zotero-addons-scraper/pull/315)
+
+Zotero’s own documentation currently says it does not provide a plugin directory; the community market is a separate project.
+
 ## Product tour
 
 [**Explore the interactive multilingual showcase →**](https://lipo1024.github.io/tais-appearance/)
@@ -89,12 +97,12 @@ Translation coverage is complete as a draft; machine-generated additions still r
 
 ## Build from source
 
-Requirements are listed in \`requirements-build.txt\`.
+Requirements are listed in `requirements-build.txt`.
 
-\`\`\`powershell
+```powershell
 python -m pip install -r requirements-build.txt
 python build.py
-\`\`\`
+```
 
 The build runs JavaScript, CSS, XML, and regression checks and produces an XPI. Public release builds require reviewed HTTPS update metadata and explicit license/release approval.
 
