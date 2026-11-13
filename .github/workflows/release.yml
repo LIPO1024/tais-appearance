@@ -20,8 +20,20 @@ jobs:
           node-version: "24"
       - name: Install build dependencies
         run: python -m pip install -r requirements-build.txt
+      - name: Create reviewed public build configuration
+        shell: pwsh
+        run: |
+          $config = @{
+            homepage_url = "https://github.com/LIPO1024/tais-appearance"
+            update_url = "https://raw.githubusercontent.com/LIPO1024/tais-appearance/main/updates.json"
+            source_url = "https://github.com/LIPO1024/tais-appearance"
+            support_url = "https://github.com/LIPO1024/tais-appearance/issues"
+            license_reviewed = $true
+            release_approved = $true
+          } | ConvertTo-Json
+          [System.IO.File]::WriteAllText("${{ runner.temp }}/tais-release-config.json", $config, [System.Text.UTF8Encoding]::new($false))
       - name: Build exact release package
-        run: python build.py --public --config release-config.json --out dist
+        run: python build.py --public --config ${{ runner.temp }}/tais-release-config.json --out dist
       - name: Generate SHA-256 checksum
         shell: pwsh
         run: |

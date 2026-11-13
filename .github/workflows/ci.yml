@@ -37,8 +37,20 @@ jobs:
           node test-i18n.cjs
           node test-showcase.cjs
           node test-brand.cjs
+      - name: Create reviewed public build configuration
+        shell: pwsh
+        run: |
+          $config = @{
+            homepage_url = "https://github.com/LIPO1024/tais-appearance"
+            update_url = "https://raw.githubusercontent.com/LIPO1024/tais-appearance/main/updates.json"
+            source_url = "https://github.com/LIPO1024/tais-appearance"
+            support_url = "https://github.com/LIPO1024/tais-appearance/issues"
+            license_reviewed = $true
+            release_approved = $true
+          } | ConvertTo-Json
+          [System.IO.File]::WriteAllText("${{ runner.temp }}/tais-release-config.json", $config, [System.Text.UTF8Encoding]::new($false))
       - name: Build and verify XPI
-        run: python build.py --public --config release-config.json --out dist
+        run: python build.py --public --config ${{ runner.temp }}/tais-release-config.json --out dist
       - name: Upload reproducible XPI
         uses: actions/upload-artifact@v4
         with:
