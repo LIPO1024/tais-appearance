@@ -16,3 +16,5 @@ Thumbs.db
 *-results.json
 build-result.json
 reproducibility-check.xpi
+release-config.json
+release-config.local.json

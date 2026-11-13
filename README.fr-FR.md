@@ -1,4 +1,4 @@
-# TAIS Appearance
+﻿# TAIS Appearance
 
 **Une extension Glass pour l’apparence et l’environnement de lecture de Zotero.** Développée par Theatre AI Studio (TAIS).
 
@@ -21,3 +21,13 @@ Les images d’arrière-plan sont traitées localement. Le rendu du texte PDF, l
 
 ## Soutenir le projet
 Les contributions volontaires via GitHub Sponsors soutiennent la maintenance et la documentation. Elles ne limitent pas les droits accordés par l’AGPL. Les 12 thèmes restent accessibles à tous.
+
+## User guides / 使用手册
+- [简体中文](docs/USER_GUIDE.zh-CN.md)
+- [English](docs/USER_GUIDE.en-US.md)
+- [日本語](docs/USER_GUIDE.ja-JP.md)
+- [한국어](docs/USER_GUIDE.ko-KR.md)
+- [Français](docs/USER_GUIDE.fr-FR.md)
+
+Product tour / 产品展示: https://lipo1024.github.io/tais-appearance/
+

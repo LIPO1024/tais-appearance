@@ -1,4 +1,4 @@
-# TAIS Appearance
+﻿# TAIS Appearance
 
 **Zotero のための Glass 外観・読書環境拡張。** Theatre AI Studio（TAIS）が開発しています。
 
@@ -21,3 +21,13 @@ requirements-build.txt の依存関係をインストールし、python build.py
 
 ## 支援
 GitHub Sponsors などの任意の支援は保守とドキュメント整備に使われます。AGPLで認められた権利を制限しません。12種類のテーマはすべてのユーザーが利用できます。
+
+## User guides / 使用手册
+- [简体中文](docs/USER_GUIDE.zh-CN.md)
+- [English](docs/USER_GUIDE.en-US.md)
+- [日本語](docs/USER_GUIDE.ja-JP.md)
+- [한국어](docs/USER_GUIDE.ko-KR.md)
+- [Français](docs/USER_GUIDE.fr-FR.md)
+
+Product tour / 产品展示: https://lipo1024.github.io/tais-appearance/
+
