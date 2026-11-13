@@ -6,12 +6,14 @@ Current public tag: v2.3.1 (Beta)
 
 ## Work completed in this pass
 
-- Reworked the repository landing README around the user journey: understand the product, inspect real feature visuals, try the interactive demo, download the XPI, then consult the five-language guides.
+- Reworked the repository landing README around the user journey: understand the product, inspect feature visuals, try the interactive demo, download the XPI, then consult the five-language guides.
 - Clarified the distinction between free/open-source functionality and voluntary project support.
-- Added a dedicated multilingual showcase section for all five user guides.
-- Added a support and licensing section to the public showcase. The section explicitly states that all 12 bundled themes remain free, that sponsorship onboarding is not confirmed, and that Alipay merchant checkout is not configured.
+- Added a showcase section linking all five user guides directly.
+- Added a support and licensing section to the public showcase. It states that all 12 bundled themes remain free, sponsorship onboarding is not confirmed, and Alipay merchant checkout is not configured.
 - Localized the support/licensing copy for Simplified Chinese, English, Japanese, Korean, and French.
-- Rebuilt the 2.3.1 XPI locally from the current source and ran the project's bundled regression/build checks.
+- Rebuilt the 2.3.1 XPI locally from the current source and ran the bundled regression/build checks.
+- Committed and pushed the changes to `main` in commit `900109c4b9382485efb51261c77f81df199e0a97`.
+- GitHub Pages deployment for that commit completed successfully. The live website returned HTTP 200 and included the new support section and French guide entry.
 
 ## Build evidence
 
@@ -33,20 +35,24 @@ Current public tag: v2.3.1 (Beta)
 - Brand/final invariant groups: 10 passed
 - Five-locale coverage checks: 6 passed
 - Showcase checks: 6 passed
+- Published XPI download endpoint: HTTP 200; existing release asset size 302,851 bytes.
+
+The newly rebuilt local XPI is not byte-identical to the existing published asset: local SHA-256 is `98e2444d...`, while GitHub reports the existing release asset digest as `4fb20eb2...`. The published asset was not replaced. This avoids silently changing a public Beta download under the same version number.
 
 The five locale dictionaries cover all extracted UI strings, but the translation process is recorded as machine-translation draft. Automated coverage is not evidence of native-speaker review.
 
 ## Release and publication boundaries
 
 1. This pass does not change the plugin runtime version or manifest. The locally rebuilt package is a reproducible 2.3.1 Beta build, not a new stable release.
-2. No replacement GitHub Release asset was uploaded. Replacing an existing public release asset with a locally rebuilt file without a versioned release decision would create ambiguity for existing users.
-3. GitHub Pages deployment depends on the repository's configured publishing workflow/source. The website changes are committed to the source branch; public availability must be verified after GitHub finishes publishing.
-4. Community marketplace PR #315 remains subject to maintainer review. Submission is not acceptance.
+2. No replacement GitHub Release asset was uploaded. A new versioned release decision is required before distributing a different XPI.
+3. GitHub Pages deployment for commit `900109c` completed successfully; live URL: https://lipo1024.github.io/tais-appearance/
+4. Community marketplace PR #315 remains open and unmerged, awaiting maintainer review. Submission is not acceptance.
 5. No Zotero-operated official add-on directory listing is claimed.
-6. GitHub Sponsors onboarding and payout eligibility have not been verified. The funding link is not represented as a confirmed checkout.
+6. The GitHub Sponsors profile URL returns HTTP 200, but no active one-time sponsorship tier or checkout was verified. Creator onboarding and payout eligibility remain unconfirmed.
 7. Alipay merchant acquiring, hosted checkout, settlement, refund policy, and merchant verification are not configured.
 8. Native-speaker review of all five languages remains required. No native review is claimed.
 9. macOS/Linux remain unsupported by the current Windows DWM material adapter. The validated target remains Windows 11 / Zotero 10.0.8 / PDF.js 5.7.0.
+10. The optional Python showcase test file was not present in the public publishing checkout and was not run. The repository build suite and Node showcase suite did pass.
 
 ## Licensing decision
 
@@ -54,9 +60,8 @@ The project contains Mica for Zotero-derived code and is distributed under appli
 
 ## Remaining external dependencies
 
-- Maintainer-side GitHub Sponsors onboarding, tax/KYC and payout setup.
+- Maintainer-side GitHub Sponsors onboarding, tax/KYC, creation of a one-time tier and payout setup.
 - If desired, a verified Alipay merchant/acquirer agreement and hosted checkout.
 - Native-speaker review and approval of zh-CN, en-US, ja-JP, ko-KR and fr-FR strings and guides.
 - Marketplace maintainer decision on PR #315.
-- Confirmation of GitHub Pages deployment and post-deploy smoke test.
 - Separate stable-release approval after cross-machine and compatibility acceptance.
