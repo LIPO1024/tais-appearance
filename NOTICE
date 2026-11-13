@@ -16,4 +16,8 @@ TAIS Appearance 2.0.0 adds a durable preference transaction journal, startup rec
 TAIS Appearance 2.2.0: consolidated responsive settings, accessible command navigation, guarded preview/profile transactions, and read-only UI contrast inspection. Native PDF drawing implementation remains from the previous local baseline. Existing upstream notices remain; corresponding-source review is still required before public distribution.
 
 TAIS Appearance 2.2.1: original Theatre AI Studio geometric stage mark and Stage Mist static vector artwork; refined setting copy and stock theme definitions. No Apple assets or font files redistributed. Upstream code/license obligations remain unchanged.
-\nTAIS Appearance 2.3.0: adds five-locale runtime dictionaries and language selection. Machine-generated translations are included as draft strings and require native-speaker review before a reviewed international release. No theme paywall is implemented; voluntary sponsorship does not restrict AGPL rights.\n
+
+
+TAIS Appearance 2.3.0: adds five-locale runtime dictionaries and language selection. Machine-generated translations are included as draft strings and require native-speaker review before a reviewed international release. No theme paywall is implemented; the project does not collect payments, donations, or sponsorship contributions.
+
+TAIS Appearance 2.3.1 project policy: free and open-source; the maintainers do not charge users. No paid tiers, payment processing, donations, or sponsorship collection are offered. All bundled themes and core functionality are available to everyone under the applicable license.

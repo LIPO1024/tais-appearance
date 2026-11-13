@@ -36,5 +36,7 @@ The validated target is Windows 11 with Zotero 10.0.8 and PDF.js 5.7.0. macOS an
 ## Privacy
 Background images are processed locally. Diagnostics contain appearance state and error markers, not document text. Redact paths, profile names, and other private details before sharing logs.
 
-## License and support
-The project is distributed under AGPL terms with third-party notices. All bundled themes remain available under the license. Optional sponsorship supports maintenance; it is not required to use any theme.
+## Free use and license
+The maintainers do not charge for TAIS Appearance. All 12 bundled themes and core features are available to everyone. There is no paid edition, subscription, donation, activation key, or feature lock. The plugin contains no payment SDK or commercial activation service.
+
+The project is distributed under applicable AGPL terms with third-party notices. This project policy describes the maintainers' distribution model; it does not add a non-commercial restriction to the AGPL rights granted to users. See LICENSE, NOTICE, and docs/THIRD_PARTY_NOTICES.md.

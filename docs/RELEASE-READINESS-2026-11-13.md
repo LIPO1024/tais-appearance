@@ -1,33 +1,41 @@
-# TAIS Appearance — Release readiness record
+# TAIS Appearance 2.3.2 Beta — Release readiness
 
 Date: 2026-11-13  
 Repository: https://github.com/LIPO1024/tais-appearance  
-Current public tag: v2.3.1 (Beta)
+Candidate: v2.3.2 Beta
 
-## Work completed in this pass
+## Project direction
 
-- Reworked the repository landing README around the user journey: understand the product, inspect feature visuals, try the interactive demo, download the XPI, then consult the five-language guides.
-- Synced the English README variant with the main English README; the Chinese README and Japanese, Korean, French README variants remain available.
-- Added direct links to all five user guides in the live showcase.
-- Added a multilingual support/licensing section to the showcase. It states that all 12 bundled themes remain free, sponsorship onboarding is not confirmed, and Alipay merchant checkout is not configured.
-- Localized the support/licensing copy for Simplified Chinese, English, Japanese, Korean, and French.
-- Committed and pushed changes to `main`:
-  - `900109c` — product onboarding and multilingual showcase.
-  - `4cf8027` — release verification record.
-  - `052f58c` — English README synchronization.
-- GitHub Pages deployment for the showcase commit completed successfully. The live website returned HTTP 200 and included the support section and five-language guide links.
+TAIS Appearance is maintained as a free and open-source project. The maintainers do not charge users and do not collect donations, sponsorship payments, license fees, or other payments.
 
-## Build and verification evidence
+- No paid edition, subscription, membership, activation key, theme lock, or feature lock.
+- No payment SDK, checkout flow, payment credential, QR code, or commercial activation service.
+- All 12 bundled themes and core appearance features are available to everyone.
+- The repository funding configuration has been removed.
+- The five runtime locale dictionaries and Fluent catalogs no longer contain the obsolete purchase, license-key, restore-purchase, or hosted-checkout strings.
+- README files, showcase, user guides, support, security, contribution, changelog, and project policy describe the same free distribution model.
+- The project policy does not add a non-commercial restriction to the AGPL rights granted to downstream users.
 
-- Version: 2.3.1 Beta
-- Local package: dist/TAIS_Appearance-2.3.1.xpi
-- Public build SHA-256: `4fb20eb21d4e96ef08f65596aacecd1d1cc38402c0174c0f485fa8b3dc336a18`
-- Package size: 302,851 bytes
-- Packaged source files: 61
+## 2.3.2 Beta changes
+
+- Remove 17 obsolete purchase/license strings from each of the five locale dictionaries.
+- Remove the corresponding legacy UI catalog entries in all five locales.
+- Update runtime version constants and manifest to 2.3.2.
+- Clarify free distribution, privacy, support, and contribution guidance.
+- Replace the former monetization document with `docs/OPEN-SOURCE-POLICY.md`.
+- Remove the obsolete payment setup document and GitHub funding configuration.
+- Preserve all 12 themes, profiles, backgrounds, Safe Mode, recovery, and native PDF rendering behavior.
+
+## Build evidence
+
+- Version: 2.3.2
+- Package: `dist/TAIS_Appearance-2.3.2.xpi`
+- Size: 298,486 bytes
+- SHA-256: `1d26a262e94317d8eb52b205f7ad8b595463d8f9a62a9fa8809f6eabc2811c96`
+- Packaged files: 61
 - JavaScript files checked: 18
 - CSS files checked: 7
-- Reproducible twice in the same local build environment: passed
-- Local public-build SHA-256 exactly matches the published GitHub Release asset digest.
+- Reproducible build in the same environment: passed
 - XPI archive integrity: passed
 - JavaScript/CSS/XML validation: passed
 - Appearance/contrast regression groups: 12 passed
@@ -37,34 +45,24 @@ Current public tag: v2.3.1 (Beta)
 - Additional reliability groups: 10 passed
 - Brand/final invariant groups: 10 passed
 - Five-locale coverage checks: 6 passed
-- Showcase Node checks: 6 passed
-- Showcase inline JavaScript syntax check: passed
-- All five user-guide files: present
-- Published XPI download endpoint: HTTP 200
-- GitHub Pages endpoint: HTTP 200
+- Showcase checks: 6 passed
+- Five locale dictionaries: 561 entries each; 558 extracted source keys covered.
 
-The five locale dictionaries cover all extracted UI strings, but the translation process is recorded as machine-translation draft. Automated coverage is not evidence of native-speaker review.
+Automated localization coverage is complete as a draft. Native-speaker review is still required; this report does not claim native review.
 
-## Release and publication boundaries
+## Compatibility and publication boundaries
 
-1. This pass does not change the plugin runtime version or manifest. The package is a reproducible 2.3.1 Beta build, not a new stable release.
-2. No replacement GitHub Release asset was uploaded; the local public build exactly reproduces the existing asset. A new versioned release decision is required before publishing a different XPI.
-3. GitHub Pages showcase is deployed at https://lipo1024.github.io/tais-appearance/
-4. Community marketplace PR #315 remains open and unmerged, awaiting maintainer review. Submission is not acceptance.
-5. No Zotero-operated official add-on directory listing is claimed.
-6. The GitHub Sponsors profile URL returns HTTP 200, but no active one-time sponsorship tier or checkout was verified. Creator onboarding and payout eligibility remain unconfirmed.
-7. Alipay merchant acquiring, hosted checkout, settlement, refund policy, and merchant verification are not configured.
-8. Native-speaker review of all five languages remains required. No native review is claimed.
-9. macOS/Linux remain unsupported by the current Windows DWM material adapter. The validated target remains Windows 11 / Zotero 10.0.8 / PDF.js 5.7.0.
+- Validated target remains Windows 11 / Zotero 10.0.8 / PDF.js 5.7.0.
+- macOS/Linux remain unsupported by the current Windows DWM material adapter.
+- Other Zotero versions and third-party plugin combinations require separate validation.
+- The community marketplace PR #315 remains subject to maintainer review; submission is not acceptance.
+- Zotero's own documentation currently says it does not provide a general official plugin directory.
+- The release remains Beta, not Stable. Cross-machine, system-DPI, multi-monitor, print, long-duration, and broader compatibility acceptance remain separate work.
 
-## Licensing decision
+## License and upstream notices
 
-The project contains Mica for Zotero-derived code and is distributed under applicable AGPL terms. All 12 bundled themes and covered core functionality remain available to everyone. A payment key must not be used to remove rights granted under the applicable license. A one-time US$1 contribution can be offered as voluntary support, not as a paywall for those themes.
+The project includes code derived from Mica for Zotero and is distributed under the applicable GNU AGPL terms. Upstream notices and corresponding source are retained. This project's free distribution policy describes the maintainers' practice and does not narrow downstream license rights.
 
-## Remaining external dependencies
+## Community maintenance
 
-- Maintainer-side GitHub Sponsors onboarding, tax/KYC, creation of a one-time tier and payout setup.
-- If desired, a verified Alipay merchant/acquirer agreement and hosted checkout.
-- Native-speaker review and approval of zh-CN, en-US, ja-JP, ko-KR and fr-FR strings and guides.
-- Marketplace maintainer decision on PR #315.
-- Separate stable-release approval after cross-machine and compatibility acceptance.
+The project is sustained through non-financial contributions: reproducible bug reports, translation review, compatibility testing, documentation, code review, and pull requests. No payment is required or requested to use or contribute to the project.

@@ -1,5 +1,5 @@
 /* TAIS Glass 1.3 studio: 12 visual presets, local backgrounds, paper and form controls. */
-TG_VERSION='2.3.1';
+TG_VERSION='2.3.2';
 function tgMigrate130(){
  if(getPref('migration-130')===true)return;
  const lower=(k,threshold,value)=>{const n=Number(getPref(k));if(!Number.isFinite(n)||n>=threshold)setPref(k,value);};

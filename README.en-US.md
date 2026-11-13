@@ -6,27 +6,32 @@
 
 <p align="center">
   <strong>A calmer way to read in Zotero.</strong><br>
-  A refined Glass appearance system for focused reading, research, and annotation.
+  A Glass appearance system for focused reading, research, and annotation, built by Theatre AI Studio.
 </p>
 
 <p align="center">
   <a href="https://lipo1024.github.io/tais-appearance/"><strong>Explore the live demo</strong></a> ·
-  <a href="https://github.com/LIPO1024/tais-appearance/releases/latest"><strong>Download for Zotero</strong></a> ·
+  <a href="https://github.com/LIPO1024/tais-appearance/releases/latest"><strong>Download free</strong></a> ·
   <a href="docs/USER_GUIDE.en-US.md"><strong>Read the user guide</strong></a>
 </p>
 
-<p align="center">
-  <img alt="12 themes" src="https://img.shields.io/badge/themes-12-64748b">
-  <img alt="Languages" src="https://img.shields.io/badge/languages-5-64748b">
-  <img alt="License" src="https://img.shields.io/badge/license-AGPL--3.0-blue">
-  <img alt="Platform" src="https://img.shields.io/badge/tested-Windows%2011-64748b">
-</p>
+![TAIS Appearance — Glass surfaces for Zotero](docs/images/01-cover.png)
 
 ## What it does
 
-TAIS Appearance gives Zotero a quieter, more coherent visual environment without taking control of the PDF itself. Tune translucent application surfaces, light and dark appearances, annotation typography, and the reading surround — while Zotero/PDF.js continues to render PDF text, selection, and annotations.
+TAIS Appearance gives Zotero a coherent visual environment: translucent interface surfaces, light and dark appearances, readable annotation typography, and a tunable reading surround. It styles the workspace around your documents without taking over PDF rendering.
 
-**In short:** make the workspace easier to look at during long reading sessions, without turning the document into a visual effect.
+**The principle: the interface may change; the source document must remain clear and reliable.** PDF text, embedded fonts, native selection, and annotations remain under Zotero/PDF.js control.
+
+## Features
+
+- **12 Glass presets** — six light and six dark themes across four visual families.
+- **Independent typography controls** — tune Zotero interface text and annotation cards separately.
+- **Reading-surface controls** — adjust the page surround and paper surface independently, with contrast safeguards.
+- **Reversible previews** — compare, preview, apply, cancel, undo, and restore.
+- **Local backgrounds** — built-in Stage Mist and custom images processed locally.
+- **Profiles and recovery** — save appearance setups, import/export scoped settings, inspect conflicts, and use Safe Mode.
+- **Five interface languages** — Simplified Chinese, English, Japanese, Korean, and French, with automatic locale selection.
 
 ## See the difference
 
@@ -42,38 +47,48 @@ TAIS Appearance gives Zotero a quieter, more coherent visual environment without
 |---|---|
 | ![Typography](docs/images/06-type.png) | ![Backgrounds](docs/images/07-background.png) |
 
-*These are product feature previews. Check the compatibility section before installing; platform support is not universal.*
+*These are feature previews. Check the compatibility section for the tested environment and platform limitations.*
 
-## What is included
+## Free and open source — no paid tier
 
-- **12 Glass presets** — six light and six dark themes across four visual families.
-- **Readable typography** — separate controls for Zotero interface text and annotation cards.
-- **A tunable reading surface** — adjust the page surround and paper surface independently, with contrast safeguards.
-- **Reversible previews** — compare, preview, apply, cancel, undo, and restore.
-- **Local backgrounds** — built-in Stage Mist and custom images processed locally.
-- **Profiles and recovery** — save appearance setups, import scoped settings, inspect conflicts, and restore native appearance.
-- **Five interface languages** — Simplified Chinese, English, Japanese, Korean, and French, with automatic locale selection.
+TAIS Appearance is a **free and open-source project** maintained without charging users.
 
-## Try it before you install
+- Every bundled theme and core appearance feature is free.
+- There is no paid edition, membership, activation key, theme lock, or feature lock.
+- There are no subscription fees, license fees, donations, or sponsorship payments.
+- The plugin contains no payment SDK, checkout flow, analytics tracker, or commercial activation service.
+- All users receive the same features.
 
-**[Open the interactive product tour](https://lipo1024.github.io/tais-appearance/)**
+The project includes code derived from Mica for Zotero and is distributed under the applicable GNU AGPL terms. You may use, study, modify, and redistribute the software within the rights and obligations of the license. Preserve upstream notices and corresponding source.
 
-The showcase demonstrates light/dark appearances, the 12 theme palettes, reading-surface controls, and the main feature set. It is designed to run without analytics or external image/font requests.
+## Product tour and five-language guides
+
+**[Explore the interactive product tour](https://lipo1024.github.io/tais-appearance/)**
+
+| Language | User guide | Project overview |
+|---|---|---|
+| 简体中文 | [使用手册](docs/USER_GUIDE.zh-CN.md) | [中文 README](README.zh-CN.md) |
+| English | [User guide](docs/USER_GUIDE.en-US.md) | [English README](README.en-US.md) |
+| 日本語 | [ユーザーガイド](docs/USER_GUIDE.ja-JP.md) | [日本語 README](README.ja-JP.md) |
+| 한국어 | [사용자 가이드](docs/USER_GUIDE.ko-KR.md) | [한국어 README](README.ko-KR.md) |
+| Français | [Guide utilisateur](docs/USER_GUIDE.fr-FR.md) | [README français](README.fr-FR.md) |
+
+Automated locale coverage is complete as a draft; native-speaker review is still required. See [internationalization status](docs/I18N-STATUS.md).
 
 ## Install
 
-**Current public build: [TAIS Appearance 2.3.1 Beta (.xpi)](https://github.com/LIPO1024/tais-appearance/releases/download/v2.3.1/TAIS_Appearance-2.3.1.xpi)** · [Release notes and SHA-256](https://github.com/LIPO1024/tais-appearance/releases/tag/v2.3.1)
+**Current public build: [TAIS Appearance 2.3.2 Beta (.xpi)](https://github.com/LIPO1024/tais-appearance/releases/download/v2.3.2/TAIS_Appearance-2.3.2.xpi)** · [Release notes and checksum](https://github.com/LIPO1024/tais-appearance/releases/tag/v2.3.2)
 
-1. Download the XPI from the release above.
+1. Download the XPI.
 2. In Zotero, open **Tools → Plugins**.
 3. Open the gear menu and choose **Install Plugin From File**.
 4. Select the downloaded XPI.
 
-This is a **Beta** build. Test it in a separate Zotero profile first and export your settings before upgrading a primary profile.
+This is a Beta build. Test it in a separate Zotero profile first and export your settings before upgrading a primary profile.
 
-### Compatibility
+## Compatibility
 
-| Environment | Current status |
+| Environment | Status |
 |---|---|
 | Windows 11 | Primary tested platform |
 | Zotero 10.0.8 | Validated target |
@@ -81,49 +96,30 @@ This is a **Beta** build. Test it in a separate Zotero profile first and export 
 | macOS / Linux | Not supported by the current Windows DWM material adapter |
 | Other Zotero versions | Not yet verified |
 
-Do not infer cross-platform support from the five-language interface. Localization and operating-system compatibility are separate.
+Five interface languages do not imply support for five operating systems. Follow this compatibility table and the notes for each release.
 
-## Free and open source
-
-The core plugin is free and open source. **All 12 bundled themes and core appearance controls are available to every user.** This project includes code derived from Mica for Zotero and is distributed under the applicable AGPL terms. The project cannot use a payment key to take away rights already granted by that license.
-
-If TAIS Appearance is useful in your daily work, you can optionally support its maintenance with a one-time contribution. Support is voluntary; it does not unlock themes, remove a feature restriction, or change AGPL rights.
-
-**Funding setup is not yet confirmed.** The repository has a GitHub Sponsors funding configuration, but creator onboarding and payout eligibility still need to be completed and verified. Until the sponsor page accepts contributions, please treat this as a planned support channel, not an active checkout. Alipay merchant collection is also not configured.
-
-- [Funding and licensing policy](docs/MONETIZATION.md)
-- [Payment setup notes (简体中文)](docs/PAYMENT-SETUP.zh-CN.md)
-- [GitHub Sponsors](https://github.com/sponsors/LIPO1024) — availability depends on account onboarding
-
-## Documentation in five languages
-
-| Language | User guide | Project overview |
-|---|---|---|
-| 简体中文 | [使用手册](docs/USER_GUIDE.zh-CN.md) | [中文项目说明](README.zh-CN.md) |
-| English | [User guide](docs/USER_GUIDE.en-US.md) | [README](README.en-US.md) |
-| 日本語 | [ユーザーガイド](docs/USER_GUIDE.ja-JP.md) | [プロジェクト紹介](README.ja-JP.md) |
-| 한국어 | [사용자 가이드](docs/USER_GUIDE.ko-KR.md) | [프로젝트 소개](README.ko-KR.md) |
-| Français | [Guide utilisateur](docs/USER_GUIDE.fr-FR.md) | [Présentation](README.fr-FR.md) |
-
-Translation coverage is complete as a **draft**, not as a native-speaker-certified translation. See [internationalization status](docs/I18N-STATUS.md). Native review is still required before claiming professionally reviewed localization.
-
-## Zotero add-on directories
-
-A submission has been opened with the community-maintained [Zotero Add-ons Scraper](https://github.com/syt2/zotero-addons-scraper), which feeds the [Add-on Market for Zotero](https://github.com/syt2/zotero-addons). Maintainer review is pending; this is **not** an official Zotero directory listing.
-
-[Track community submission PR #315](https://github.com/syt2/zotero-addons-scraper/pull/315)
-
-Zotero's own documentation currently does not provide a general official add-on directory. Community directories are independently maintained and have their own review processes.
-
-## Privacy and safety
+## Privacy and security
 
 - Custom backgrounds are processed locally.
 - The plugin does not need Zotero cloud credentials.
 - It does not intentionally read or upload document contents.
-- PDF rendering and document data remain under Zotero/PDF.js control.
-- No payment SDK, payment credential, activation server, or theme-locking system is included.
+- PDF rendering, selection, and annotations remain under Zotero/PDF.js control.
+- No analytics, advertising, payment SDK, or commercial activation service is included.
 
-Zotero plugins can have broad access to Zotero and your computer. Install only software you trust, and review the source and release notes.
+Zotero plugins can have broad access to Zotero and your computer. Install only builds you trust. Redact local paths, profile names, and other private information before sharing diagnostics.
+
+[Read the project policy](docs/OPEN-SOURCE-POLICY.md) · [Read the contribution guide](CONTRIBUTING.md)
+
+## Contribute
+
+Contributions are welcome:
+
+- [Report a bug or suggest a feature](https://github.com/LIPO1024/tais-appearance/issues)
+- [Read the contribution guide](CONTRIBUTING.md)
+- [Report a security vulnerability](SECURITY.md)
+- [Read the changelog](CHANGELOG.md)
+
+Never attach a Zotero database, private PDF, access token, or unredacted personal data.
 
 ## Build from source
 
@@ -134,23 +130,17 @@ python -m pip install -r requirements-build.txt
 python build.py
 ```
 
-The build checks JavaScript, CSS, XML, and regression suites, then produces a reproducible XPI. Public release builds require reviewed HTTPS metadata and explicit release approval.
+The build checks JavaScript, CSS, XML, and regression suites, then produces an XPI. Public releases still require version, compatibility, and license review.
 
 ## License and third-party notices
 
-This derivative is distributed under the applicable **GNU Affero General Public License v3.0 (AGPL-3.0)** terms. It includes modified code derived from [Mica for Zotero](https://github.com/northword/zotero-mica). Preserve the upstream notices and corresponding-source obligations.
+This project is distributed under the applicable **GNU Affero General Public License v3.0 (AGPL-3.0)** terms and includes modified code derived from [Mica for Zotero](https://github.com/northword/zotero-mica).
 
 - [LICENSE](LICENSE)
 - [NOTICE](NOTICE)
 - [Third-party notices and corresponding source](docs/THIRD_PARTY_NOTICES.md)
-- [Internationalization status](docs/I18N-STATUS.md)
 
 ---
 
-<p align="center">
-  <strong>Theatre AI Studio · TAIS Appearance</strong><br>
-  <a href="https://lipo1024.github.io/tais-appearance/">Website</a> ·
-  <a href="https://github.com/LIPO1024/tais-appearance">GitHub</a> ·
-  <a href="https://github.com/LIPO1024/tais-appearance/issues">Issues</a> ·
-  <a href="docs/MONETIZATION.md">Support the project</a>
-</p>
+**Theatre AI Studio · TAIS Appearance**
+[Website](https://lipo1024.github.io/tais-appearance/) · [GitHub](https://github.com/LIPO1024/tais-appearance) · [Issues](https://github.com/LIPO1024/tais-appearance/issues)

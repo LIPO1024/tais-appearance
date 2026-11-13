@@ -1,33 +1,94 @@
-﻿# TAIS Appearance
+# TAIS Appearance
 
-**Zotero のための Glass 外観・読書環境拡張。** Theatre AI Studio（TAIS）が開発しています。
+<p align="center">
+  <img src="docs/images/01-cover.png" alt="TAIS Appearance — Zotero の Glass 読書ワークスペース" width="900">
+</p>
 
-12種類のGlassテーマ、ライト／ダーク表示、Zotero画面と注釈の文字設定、読書ページ周辺の透明度、ローカル背景、可逆プレビュー、設定プロファイル、診断、安全モードを提供します。
+<p align="center">
+  <strong>Zotero で、より落ち着いた読書環境を。</strong><br>
+  Theatre AI Studio が開発する、読書・研究・注釈作業のための Glass 外観システムです。
+</p>
 
-## 言語
-簡体字中国語、英語、日本語、韓国語、フランス語に対応します。Zoteroの言語に従う自動選択もあります。翻訳の範囲とレビュー状況は docs/I18N-STATUS.md を参照してください。
+<p align="center">
+  <a href="https://lipo1024.github.io/tais-appearance/"><strong>製品デモを見る</strong></a> ·
+  <a href="https://github.com/LIPO1024/tais-appearance/releases/latest"><strong>無料ダウンロード</strong></a> ·
+  <a href="docs/USER_GUIDE.ja-JP.md"><strong>ユーザーガイド</strong></a>
+</p>
 
-## 対応環境
-検証対象は Windows 11、Zotero 10.0.8、PDF.js 5.7.0 です。ネイティブなウィンドウ材質に Windows DWM を使用するため、現在のリリースは Windows 専用です。macOS と Linux は未対応です。
+## 製品概要
+
+TAIS Appearance は、半透明のインターフェース、ライト／ダーク表示、注釈の文字設定、読書ページ周辺の外観を統一します。PDF 本文の描画を置き換えるものではありません。
+
+**基本方針：インターフェースは変えても、原文の可読性と信頼性は守ります。** PDF の文字、埋め込みフォント、選択、注釈は Zotero/PDF.js が管理します。
+
+## 主な機能
+
+- **12 種類の Glass テーマ**：ライト 6 種類、ダーク 6 種類。
+- **独立した文字設定**：Zotero の UI と注釈カードを個別に調整。
+- **読書面の調整**：ページ周辺と紙面を分けて設定し、コントラストを保護。
+- **元に戻せるプレビュー**：比較、適用、キャンセル、取り消し、復元。
+- **ローカル背景画像**：Stage Mist とカスタム画像をローカルで処理。
+- **プロファイルと復元**：設定の保存・入出力、競合確認、セーフモード。
+- **5 言語対応**：簡体字中国語、英語、日本語、韓国語、フランス語。
+
+## 無料・オープンソース
+
+TAIS Appearance は**無料のオープンソースプロジェクト**です。開発者は利用者に料金を請求しませんです。
+
+- すべてのテーマとコア機能を無料で利用できます。
+- 有料版、会員制、ライセンスキー、テーマ制限、機能制限はありません。
+- サブスクリプション、ライセンス料、寄付、スポンサー支援の支払いは受け付けません。
+- プラグインに決済 SDK、広告、アクセス解析、商用アクティベーション機能は含まれません。
+
+本プロジェクトには Mica for Zotero に由来するコードが含まれ、適用される GNU AGPL の条件で配布されます。ライセンスと上流の著作権表示を保持してください。
+
+## デモと 5 言語のガイド
+
+[インタラクティブな製品デモ](https://lipo1024.github.io/tais-appearance/)
+
+- [简体中文 使用手册](docs/USER_GUIDE.zh-CN.md)
+- [English User Guide](docs/USER_GUIDE.en-US.md)
+- [日本語ユーザーガイド](docs/USER_GUIDE.ja-JP.md)
+- [한국어 사용자 가이드](docs/USER_GUIDE.ko-KR.md)
+- [Guide utilisateur français](docs/USER_GUIDE.fr-FR.md)
+
+翻訳は自動カバレッジ検査済みですが、ネイティブ話者による校閲は未完了です。詳しくは [国際化状況](docs/I18N-STATUS.md) を参照してください。
 
 ## インストール
-GitHub Releases から XPI をダウンロードし、Zotero の「ツール → プラグイン → 歯車 → ファイルからプラグインをインストール」で選択します。問題が起きた場合は、TAIS Appearance の「復元と診断」から Zotero 標準の外観に戻せます。
 
-## ビルド
-requirements-build.txt の依存関係をインストールし、python build.py を実行します。ビルドでは JavaScript、CSS、XML、回帰テストを検証します。
+[TAIS Appearance 2.3.2 Beta（XPI）をダウンロード](https://github.com/LIPO1024/tais-appearance/releases/download/v2.3.2/TAIS_Appearance-2.3.2.xpi)
 
-## プライバシーとライセンス
-背景画像はローカルで処理されます。PDFの文字描画、選択、注釈、文献データは Zotero/PDF.js が管理します。派生コードは AGPL の条件に従って配布されます。LICENSE、NOTICE、docs/THIRD_PARTY_NOTICES.md を確認してください。
+Zotero の「ツール → プラグイン → 歯車 → ファイルからプラグインをインストール」で XPI を選択します。Beta 版のため、まず別の Zotero プロファイルでテストし、設定をバックアップしてください。
 
-## 支援
-GitHub Sponsors などの任意の支援は保守とドキュメント整備に使われます。AGPLで認められた権利を制限しません。12種類のテーマはすべてのユーザーが利用できます。
+## 対応環境
 
-## User guides / 使用手册
-- [简体中文](docs/USER_GUIDE.zh-CN.md)
-- [English](docs/USER_GUIDE.en-US.md)
-- [日本語](docs/USER_GUIDE.ja-JP.md)
-- [한국어](docs/USER_GUIDE.ko-KR.md)
-- [Français](docs/USER_GUIDE.fr-FR.md)
+| 環境 | 状態 |
+|---|---|
+| Windows 11 | 主なテスト環境 |
+| Zotero 10.0.8 | 検証済み |
+| PDF.js 5.7.0 | 検証済み |
+| macOS / Linux | 現在の Windows DWM アダプターでは非対応 |
+| その他の Zotero バージョン | 未検証 |
 
-Product tour / 产品展示: https://lipo1024.github.io/tais-appearance/
+## プライバシーと安全性
 
+背景画像はローカルで処理されます。文献本文を意図的に読み取ったりアップロードしたりしません。PDF の描画、選択、注釈は Zotero/PDF.js が管理します。診断情報を共有する前に、ローカルパスや個人情報を削除してください。
+
+## 開発への参加
+
+- [Issue を作成](https://github.com/LIPO1024/tais-appearance/issues)
+- [貢献ガイド](CONTRIBUTING.md)
+- [セキュリティ報告](SECURITY.md)
+- [変更履歴](CHANGELOG.md)
+
+## ソースからビルド
+
+`requirements-build.txt` の依存関係をインストールし、`python build.py` を実行します。
+
+[プロジェクトのオープンソース方針](docs/OPEN-SOURCE-POLICY.md) · [開発への参加](CONTRIBUTING.md)
+
+## ライセンス
+
+適用される **GNU AGPL-3.0** の条件で配布されます。[LICENSE](LICENSE)、[NOTICE](NOTICE)、[第三者ライセンス表示](docs/THIRD_PARTY_NOTICES.md) を確認してください。
+
+[製品サイト](https://lipo1024.github.io/tais-appearance/) · [GitHub](https://github.com/LIPO1024/tais-appearance) · [Issue](https://github.com/LIPO1024/tais-appearance/issues)

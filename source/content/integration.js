@@ -2,8 +2,8 @@
 (function installTAIS132(){
  if(addon.__tgLifecycleIntegrated===true)return;
  addon.__tgLifecycleIntegrated=true;
- Zotero.__TAIS130Integrated='2.3.1';
- addon.version='2.3.1';addon.reading=TGReading;addon.focus=TGFocus;addon.background=TGBackground;
+ Zotero.__TAIS130Integrated='2.3.2';
+ addon.version='2.3.2';addon.reading=TGReading;addon.focus=TGFocus;addon.background=TGBackground;
  const sheet=rootURI+'content/surface-130.css';
  if(!SHEETS.includes(sheet))SHEETS.push(sheet);
  // Same stylesheet origin as the generic glass sheet; scoped settings controls override only themselves.
