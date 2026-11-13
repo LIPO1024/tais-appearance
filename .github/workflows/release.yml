@@ -9,12 +9,13 @@ jobs:
   build-release:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: pip
-      - uses: actions/setup-node@v4
+          cache-dependency-path: requirements-build.txt
+      - uses: actions/setup-node@v5
         with:
           node-version: "24"
       - name: Install build dependencies
