@@ -1,4 +1,4 @@
-# TAIS Appearance
+﻿# TAIS Appearance
 
 **Make Zotero feel like a calm, coherent reading workspace.**  
 A Glass appearance system by **Theatre AI Studio (TAIS)** — designed for long reading sessions, focused research, and clear annotation work.
@@ -53,17 +53,16 @@ The product tour demonstrates light/dark appearances, all 12 theme palettes, rea
 
 ## Install
 
-**A public, signed-off release is not available yet.** The current repository is a beta/source preview. Please do not install an unreviewed build into a primary Zotero profile.
+**Beta download is available:** [TAIS Appearance 2.3.1 Beta (.xpi)](https://github.com/LIPO1024/tais-appearance/releases/download/v2.3.1/TAIS_Appearance-2.3.1.xpi) · [Release notes and SHA-256](https://github.com/LIPO1024/tais-appearance/releases/tag/v2.3.1)
 
-When a reviewed XPI release is published:
+This is a beta build. Test it in a separate Zotero profile first and export your settings before upgrading a primary profile.
 
-1. Download the \`.xpi\` asset from [GitHub Releases](https://github.com/LIPO1024/tais-appearance/releases).
+1. Download the XPI asset from the release link above.
 2. In Zotero, open **Tools → Plugins**.
 3. Open the gear menu and choose **Install Plugin From File**.
 4. Select the downloaded XPI.
 
-For now, developers can build from source using the instructions below.
-
+The validated target is Windows 11 / Zotero 10.0.8 / PDF.js 5.7.0. macOS and Linux are not supported by the current Windows DWM material adapter. The five-language translations are machine-generated drafts and still require native-speaker review.
 ## Compatibility and safety
 
 | Environment | Status |
@@ -107,3 +106,4 @@ This derivative is distributed under the applicable **AGPL** terms. It includes 
 
 **Theatre AI Studio · TAIS Appearance**  
 [Website](https://lipo1024.github.io/tais-appearance/) · [GitHub](https://github.com/LIPO1024/tais-appearance) · [Issues](https://github.com/LIPO1024/tais-appearance/issues) · [Funding information](docs/MONETIZATION.md)
+
