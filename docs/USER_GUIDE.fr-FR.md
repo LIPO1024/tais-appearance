@@ -36,5 +36,9 @@ La cible validée est Windows 11 avec Zotero 10.0.8 et PDF.js 5.7.0. macOS et Li
 ## Confidentialité
 Les images d'arrière-plan sont traitées localement. Les diagnostics contiennent des marqueurs d'état d'apparence et d'erreur, et non du texte du document. Rédigez les chemins, les noms de profil et d’autres détails privés avant de partager les journaux.
 
-## Licence et support
-Le projet est distribué selon les conditions AGPL avec des avis de tiers. Tous les thèmes groupés restent disponibles sous licence. Le parrainage facultatif prend en charge la maintenance ; il n’est pas nécessaire d’utiliser un thème.
+## Utilisation gratuite et licence
+TAIS Appearance est fourni gratuitement par ses mainteneurs. Les 12 thèmes et toutes les fonctions principales sont accessibles à tous. Il n’existe aucune édition payante, aucun abonnement, don, clé d’activation ni verrouillage de fonctionnalité. Le plugin n’intègre aucun SDK de paiement ni service d’activation commerciale.
+
+Le projet est distribué selon les conditions AGPL applicables, avec les mentions des tiers. Cette politique de distribution gratuite n’ajoute aucune restriction non commerciale aux droits accordés aux utilisateurs par l’AGPL. Consultez la [politique open source](OPEN-SOURCE-POLICY.md).
+
+Pour les limites de plateforme, consultez la [matrice de compatibilité](COMPATIBILITY.md) et l’[architecture des adaptateurs](PLATFORM-ADAPTER-ARCHITECTURE.md).

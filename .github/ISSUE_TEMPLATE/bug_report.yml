@@ -1,0 +1,66 @@
+name: Bug report
+description: Report a reproducible issue with TAIS Appearance.
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Search existing issues first. Never attach your Zotero database, private PDFs, credentials, or unredacted personal paths.
+  - type: input
+    id: plugin-version
+    attributes:
+      label: TAIS Appearance version
+      placeholder: "2.4.0"
+    validations:
+      required: true
+  - type: input
+    id: zotero-version
+    attributes:
+      label: Zotero version
+      placeholder: "10.0.8"
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options: [Windows 11, Windows 10, macOS, Linux, Other]
+    validations:
+      required: true
+  - type: input
+    id: display
+    attributes:
+      label: Display scaling / DPI
+      placeholder: "100%, 125%, 150%, mixed-DPI, unknown"
+  - type: dropdown
+    id: safe-mode
+    attributes:
+      label: Does it also happen in TAIS Safe Mode?
+      options: ["Yes", "No", "Not tested"]
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Minimal steps, starting from a clean Zotero restart if possible.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Redacted diagnostics
+      description: Remove local paths, library identifiers, and private details before posting.

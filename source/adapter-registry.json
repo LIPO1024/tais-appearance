@@ -1,6 +1,6 @@
 {
   "product": "TAIS Appearance",
-  "version": "2.2.1",
+  "version": "2.4.0",
   "host": "Tested locally: Windows 11 / Zotero 10.0.8 / PDF.js 5.7.0",
   "architecture": {
     "universal": "Known Zotero chrome UI and explicitly fingerprinted local tool documents; not all windows",
@@ -100,10 +100,27 @@
     "1.4.2 adds reversible native PDF dark-theme coordination and exact item-pane-sidenav color/selection treatment; unknown platforms fail closed."
   ],
   "legacyProduct": "TAIS Zotero Glass",
-  "releaseStage": "Local candidate",
+  "releaseStage": "Stable · Windows 11 / Zotero 10.0.8 target",
   "stableAddOnId": "tais-zotero-glass@tais.local",
   "safeMode": {
     "preference": "extensions.taisZoteroGlass.safe-mode",
     "behavior": "restore native owned styles; block reader and tool adapters"
+  },
+  "platforms": {
+    "windows": {
+      "status": "supported",
+      "adapter": "DWM Acrylic/system backdrop",
+      "validatedTarget": "Windows 11 / Zotero 10.0.8 / PDF.js 5.7.0"
+    },
+    "macos": {
+      "status": "unsupported",
+      "plannedAdapter": "AppKit NSVisualEffectView",
+      "note": "Research and architecture documented; no production adapter shipped."
+    },
+    "linux": {
+      "status": "unsupported",
+      "plannedAdapter": "Capability-negotiated compositor backend",
+      "note": "X11/Wayland behavior is compositor-dependent; no production adapter shipped."
+    }
   }
 }

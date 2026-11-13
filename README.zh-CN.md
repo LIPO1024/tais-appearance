@@ -75,16 +75,20 @@ TAIS Appearance 是一个**免费开源项目**，维护者不向用户收费。
 
 翻译词条已完成自动化覆盖检查，但仍需母语使用者审校。详见 [国际化状态](docs/I18N-STATUS.md)。
 
+[兼容性矩阵](docs/COMPATIBILITY.md) · [平台材质适配架构](docs/PLATFORM-ADAPTER-ARCHITECTURE.md) · [五语术语表与审校流程](docs/LOCALIZATION-GLOSSARY.md)
+
 ## 安装
 
-**当前公开版本：** [TAIS Appearance 2.3.2 Beta（XPI）](https://github.com/LIPO1024/tais-appearance/releases/download/v2.3.2/TAIS_Appearance-2.3.2.xpi) · [版本说明与校验值](https://github.com/LIPO1024/tais-appearance/releases/tag/v2.3.2)
+**当前公开版本：** [TAIS Appearance 2.4.0 Stable（XPI）](https://github.com/LIPO1024/tais-appearance/releases/download/v2.4.0/TAIS_Appearance-2.4.0.xpi) · [版本说明与校验值](https://github.com/LIPO1024/tais-appearance/releases/tag/v2.4.0)
 
 1. 下载 XPI 安装包。
 2. 在 Zotero 中打开“工具 → 插件”。
 3. 点击齿轮菜单，选择“从文件安装插件”。
 4. 选择下载的 XPI。
 
-当前为 Beta 版本。建议先在独立 Zotero 配置中测试，并在升级主配置前导出设置、保留旧版安装包。
+这是面向 Windows 11 / Zotero 10.0.8 / PDF.js 5.7.0 验证目标的 Stable 版本。升级主配置前仍建议导出设置并保留旧版安装包；其他平台及未列出的 Zotero 版本尚不支持或未验证。
+
+[兼容性矩阵与平台路线图](docs/COMPATIBILITY.md) · [平台材质适配架构](docs/PLATFORM-ADAPTER-ARCHITECTURE.md)
 
 ## 兼容性
 

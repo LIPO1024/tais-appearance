@@ -1,0 +1,66 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  static-build:
+    name: Static build · ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-latest]
+        python: ["3.12"]
+        node: ["24"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Install build dependencies
+        run: python -m pip install -r requirements-build.txt
+      - name: Verify locale, appearance, and showcase tests
+        run: |
+          node test-i18n.cjs
+          node test-showcase.cjs
+          node test-brand.cjs
+      - name: Build and verify XPI
+        run: python build.py --public --config release-config.json --out dist
+      - name: Upload reproducible XPI
+        uses: actions/upload-artifact@v4
+        with:
+          name: TAIS-Appearance-${{ runner.os }}-${{ github.sha }}
+          path: dist/TAIS_Appearance-2.4.0.xpi
+          if-no-files-found: error
+          retention-days: 14
+  security-hygiene:
+    name: Repository hygiene
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for accidentally committed credentials
+        shell: bash
+        run: |
+          if grep -RInE --exclude-dir=.git --exclude='*.png' --exclude='*.jpg' --exclude='*.pdf' --exclude='*.xpi' '(gh[pousr]_[A-Za-z0-9]{30,}|sk_live_[A-Za-z0-9]+|rk_live_[A-Za-z0-9]+|BEGIN (RSA|OPENSSH|EC) PRIVATE KEY)' .; then
+            echo "Potential credential detected."
+            exit 1
+          fi
+      - name: Ensure obsolete payment copy stays out of product surfaces
+        shell: bash
+        run: |
+          if grep -RInE '(GitHub Sponsors|Alipay checkout|One-time US\$1 payment|Unlock all themes|Hosted checkout is not configured)' README* index.html source; then
+            echo "Obsolete payment UI or marketing copy detected."
+            exit 1
+          fi

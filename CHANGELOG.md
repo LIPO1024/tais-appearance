@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.4.0 — Stable · Windows
+
+- Establish a shared platform-adapter architecture and publish a verified compatibility matrix.
+- Document the macOS AppKit and Linux compositor research paths without claiming unsupported native material.
+- Add cross-OS static build CI, release automation, issue templates, pull-request checklist, and repository hygiene checks.
+- Add reader-safety invariants for PDF.js version gating, native canvas/text-layer non-mutation, print fallback, accessibility preferences, and reversible teardown.
+- Add a five-language terminology glossary and native-review workflow.
+- Preserve the 12 Glass presets, user profiles, local backgrounds, Safe Mode, recovery, and existing PDF.js native rendering hooks.
+- Keep all features free and open source under applicable AGPL terms; no payments or feature locks.
+
 ## 2.3.2 — Open-source cleanup beta
 
 - Remove dormant purchase, license-key, restore-purchase, and hosted-checkout strings from all five locale dictionaries and UI catalogs.

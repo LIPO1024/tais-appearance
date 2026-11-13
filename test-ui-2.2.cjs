@@ -1,6 +1,6 @@
 ﻿const fs=require('fs'),assert=require('assert'),vm=require('vm');const base=__dirname+'/source/',ui=fs.readFileSync(base+'content/settings-ui.js','utf8'),css=fs.readFileSync(base+'content/preferences.css','utf8'),boot=fs.readFileSync(base+'bootstrap.js','utf8'),checks=[];
 function test(name,fn){fn();checks.push({name,passed:true});}
-test('stable identity and full version',()=>{const m=JSON.parse(fs.readFileSync(base+'manifest.json'));assert.equal(m.version,'2.3.2');assert.equal(m.applications.zotero.id,'tais-zotero-glass@tais.local');});
+test('stable identity and full version',()=>{const m=JSON.parse(fs.readFileSync(base+'manifest.json'));assert.equal(m.version,'2.4.0');assert.equal(m.applications.zotero.id,'tais-zotero-glass@tais.local');});
 test('header layout separates identity from actions',()=>{assert(ui.includes('header.append(brand,master)'));assert(ui.includes('toolbar.append(historyActions)'));assert(css.includes('grid-template-columns:minmax(0,1fr) auto'));assert(css.includes('@container tais-settings'));});
 test('every settings design token has a definition',()=>{const names=[...css.matchAll(/var\((--g-[a-z-]+)/g)].map(x=>x[1]);for(const n of new Set(names))assert(css.includes(n+':'),'Undefined '+n);});
 test('all custom fields retain original data-setting controls',()=>{for(const k of ['interface-text-size','annotation-text-size','native-paper-opacity','reader-background','settings-density'])assert(ui.includes(k));});

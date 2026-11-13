@@ -28,3 +28,7 @@ Zotero's own menus and third-party plugins remain in their own languages. TAIS A
 ## Project policy
 
 TAIS Appearance is free and open source. There are no paid language packs, translation unlocks, or feature restrictions by locale.
+
+## Terminology and review
+
+Use [LOCALIZATION-GLOSSARY.md](LOCALIZATION-GLOSSARY.md) for the shared five-language terminology and review workflow. Do not claim native-speaker approval until a reviewer log records the locale, reviewer, date, commit, and reviewed keys.

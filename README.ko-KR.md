@@ -54,11 +54,15 @@ TAIS Appearance는 **무료 오픈 소스 프로젝트**이며 유지 관리자�
 
 자동 번역 범위 검사는 완료했지만 원어민 검수는 아직 필요합니다. [국제화 상태](docs/I18N-STATUS.md)를 참조하세요.
 
+[호환성 매트릭스](docs/COMPATIBILITY.md) · [플랫폼 어댑터 아키텍처](docs/PLATFORM-ADAPTER-ARCHITECTURE.md) · [다국어 용어집](docs/LOCALIZATION-GLOSSARY.md)
+
 ## 설치
 
-[TAIS Appearance 2.3.2 Beta 다운로드(XPI)](https://github.com/LIPO1024/tais-appearance/releases/download/v2.3.2/TAIS_Appearance-2.3.2.xpi)
+[TAIS Appearance 2.4.0 Stable 다운로드(XPI)](https://github.com/LIPO1024/tais-appearance/releases/download/v2.4.0/TAIS_Appearance-2.4.0.xpi)
 
-Zotero에서 도구 → 플러그인 → 톱니바퀴 → 파일에서 플러그인 설치를 선택하고 XPI를 지정합니다. Beta 버전이므로 별도 Zotero 프로필에서 먼저 테스트하고 설정을 백업하세요.
+Zotero에서 도구 → 플러그인 → 톱니바퀴 → 파일에서 플러그인 설치를 선택하고 XPI를 지정합니다. Windows 11 / Zotero 10.0.8 / PDF.js 5.7.0 검증 대상을 위한 Stable 버전입니다. 기본 프로필을 업데이트하기 전에 설정을 내보내세요. 다른 플랫폼과 명시되지 않은 Zotero 버전은 지원 또는 검증되지 않았습니다.
+
+[호환성 매트릭스 및 플랫폼 로드맵](docs/COMPATIBILITY.md) · [플랫폼 어댑터 아키텍처](docs/PLATFORM-ADAPTER-ARCHITECTURE.md)
 
 ## 지원 환경
 

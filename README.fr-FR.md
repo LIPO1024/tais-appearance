@@ -54,11 +54,15 @@ Le projet comprend du code dérivé de Mica for Zotero et est distribué selon l
 
 La couverture automatique des traductions est vérifiée, mais une relecture par des locuteurs natifs reste nécessaire. Voir [l’état de l’internationalisation](docs/I18N-STATUS.md).
 
+[Matrice de compatibilité](docs/COMPATIBILITY.md) · [Architecture des adaptateurs](docs/PLATFORM-ADAPTER-ARCHITECTURE.md) · [Glossaire multilingue](docs/LOCALIZATION-GLOSSARY.md)
+
 ## Installation
 
-[Télécharger TAIS Appearance 2.3.2 Beta (.xpi)](https://github.com/LIPO1024/tais-appearance/releases/download/v2.3.2/TAIS_Appearance-2.3.2.xpi)
+[Télécharger TAIS Appearance 2.4.0 Stable (.xpi)](https://github.com/LIPO1024/tais-appearance/releases/download/v2.4.0/TAIS_Appearance-2.4.0.xpi)
 
-Dans Zotero, ouvrez Outils → Extensions → menu engrenage → Installer depuis un fichier, puis sélectionnez le XPI. Il s’agit d’une version Beta : testez-la d’abord dans un profil Zotero séparé et sauvegardez vos paramètres.
+Dans Zotero, ouvrez Outils → Extensions → menu engrenage → Installer depuis un fichier, puis sélectionnez le XPI. Cette version Stable est validée pour Windows 11 / Zotero 10.0.8 / PDF.js 5.7.0. Exportez vos paramètres avant de mettre à jour votre profil principal ; les autres plateformes et versions de Zotero non listées ne sont pas prises en charge ou vérifiées.
+
+[Matrice de compatibilité et feuille de route](docs/COMPATIBILITY.md) · [Architecture des adaptateurs](docs/PLATFORM-ADAPTER-ARCHITECTURE.md)
 
 ## Compatibilité
 

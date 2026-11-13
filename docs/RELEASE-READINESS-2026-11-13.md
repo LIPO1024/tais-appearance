@@ -1,68 +1,78 @@
-# TAIS Appearance 2.3.2 Beta — Release readiness
+# TAIS Appearance 2.4.0 — Release readiness
 
 Date: 2026-11-13  
 Repository: https://github.com/LIPO1024/tais-appearance  
-Candidate: v2.3.2 Beta
+Candidate: v2.4.0 Stable
+Supported native material target: Windows 11 / Zotero 10.0.8 / PDF.js 5.7.0
 
-## Project direction
+The connected Windows device reports Windows 11 Home China build 26300. The active Zotero main window reports 120 DPI (125%) during inspection, with one remote-session display at 1536×960. The active Zotero profile still has TAIS Appearance 2.3.0 installed; 2.4.0 was built and packaged but not installed into the user's primary profile. This is environment inspection, not a claim of a complete 2.4.0 visual acceptance run.
 
-TAIS Appearance is maintained as a free and open-source project. The maintainers do not charge users and do not collect donations, sponsorship payments, license fees, or other payments.
+## Scope
 
-- No paid edition, subscription, membership, activation key, theme lock, or feature lock.
-- No payment SDK, checkout flow, payment credential, QR code, or commercial activation service.
-- All 12 bundled themes and core appearance features are available to everyone.
-- The repository funding configuration has been removed.
-- The five runtime locale dictionaries and Fluent catalogs no longer contain the obsolete purchase, license-key, restore-purchase, or hosted-checkout strings.
-- README files, showcase, user guides, support, security, contribution, changelog, and project policy describe the same free distribution model.
-- The project policy does not add a non-commercial restriction to the AGPL rights granted to downstream users.
+2.4.0 is a hardening and release-engineering update, not a theme expansion. It preserves the existing 12 themes, appearance settings, local backgrounds, profiles, undo/recovery, Safe Mode, and native PDF.js drawing hooks.
 
-## 2.3.2 Beta changes
+## Changes
 
-- Remove 17 obsolete purchase/license strings from each of the five locale dictionaries.
-- Remove the corresponding legacy UI catalog entries in all five locales.
-- Update runtime version constants and manifest to 2.3.2.
-- Clarify free distribution, privacy, support, and contribution guidance.
-- Replace the former monetization document with `docs/OPEN-SOURCE-POLICY.md`.
-- Remove the obsolete payment setup document and GitHub funding configuration.
-- Preserve all 12 themes, profiles, backgrounds, Safe Mode, recovery, and native PDF rendering behavior.
+- Added a platform adapter architecture document and a compatibility matrix.
+- Researched macOS AppKit `NSVisualEffectView` and Linux compositor effects. Neither adapter is shipped or claimed as supported.
+- Added CI static build validation on Windows, macOS, and Linux. The matrix validates source/tests/build only; it is not native Zotero UI acceptance.
+- Added a release workflow for XPI and SHA-256 generation.
+- Added GitHub bug/feature templates and a pull request checklist.
+- Added 9 reader-safety invariants for PDF.js engine gating, non-mutation of PDF glyph/canvas/text layer, print fallback, forced colors, reduced transparency, Safe Mode, and teardown.
+- Added a five-language terminology glossary and reviewer workflow.
+- Updated all README variants and the product showcase to link to compatibility and platform architecture information.
+- Preserved the pure open-source distribution policy and removed all funding/payment configuration in 2.3.2.
 
-## Build evidence
+## Build and automated verification
 
-- Version: 2.3.2
-- Package: `dist/TAIS_Appearance-2.3.2.xpi`
-- Size: 298,486 bytes
-- SHA-256: `1d26a262e94317d8eb52b205f7ad8b595463d8f9a62a9fa8809f6eabc2811c96`
+- Version: 2.4.0 Stable
+- Package: dist/TAIS_Appearance-2.4.0.xpi
+- Size: 298,698 bytes
+- SHA-256: 869b835c4e09a0102dd4d484dfaf9d544ad8476f63151acc5ca3e64171342e07
 - Packaged files: 61
 - JavaScript files checked: 18
 - CSS files checked: 7
-- Reproducible build in the same environment: passed
+- Reproducible build: passed
 - XPI archive integrity: passed
-- JavaScript/CSS/XML validation: passed
-- Appearance/contrast regression groups: 12 passed
-- Dark policy/native bridge groups: 10 passed
-- Appearance contract groups: 11 passed
-- UI/static/inspection groups: 13 passed
-- Additional reliability groups: 10 passed
-- Brand/final invariant groups: 10 passed
-- Five-locale coverage checks: 6 passed
-- Showcase checks: 6 passed
-- Five locale dictionaries: 561 entries each; 558 extracted source keys covered.
 
-Automated localization coverage is complete as a draft. Native-speaker review is still required; this report does not claim native review.
+- Version: 2.4.0
+- Package: `dist/TAIS_Appearance-2.4.0.xpi`
+- Source files: 61 (expected to change only if future additions require it)
+- JavaScript syntax: checked by build.py
+- CSS parsing: checked by build.py
+- XML parsing: checked by build.py
+- Appearance/contrast regression: 12 groups
+- Dark policy/native bridge: 10 groups
+- Appearance contracts: 11 groups
+- UI/static/inspection: 13 groups
+- Additional reliability: 10 groups
+- Brand/final invariants: 10 groups
+- Five-locale coverage: 6 groups
+- Showcase: 6 groups
+- Reader safety invariants: 9 groups
+- Reproducible package and XPI integrity: checked by build.py
 
-## Compatibility and publication boundaries
+Automated locale coverage is not native-speaker review. The five translations remain drafts pending external linguistic review.
 
-- Validated target remains Windows 11 / Zotero 10.0.8 / PDF.js 5.7.0.
-- macOS/Linux remain unsupported by the current Windows DWM material adapter.
-- Other Zotero versions and third-party plugin combinations require separate validation.
-- The community marketplace PR #315 remains subject to maintainer review; submission is not acceptance.
-- Zotero's own documentation currently says it does not provide a general official plugin directory.
-- The release remains Beta, not Stable. Cross-machine, system-DPI, multi-monitor, print, long-duration, and broader compatibility acceptance remain separate work.
+## Platform findings
 
-## License and upstream notices
+- Windows: current DWM adapter remains the only shipped native material backend.
+- macOS: AppKit `NSVisualEffectView` is the appropriate native primitive for translucency/vibrancy, but safe Objective-C runtime bridging, NSWindow view lifecycle, accessibility settings, full-screen behavior, and cleanup require a dedicated real-Mac implementation and acceptance run.
+- Linux: X11 and Wayland lack a single portable blur API. Wayland `ext-background-effect-v1` is staging and compositor-dependent. No Linux native material support is claimed.
+- Cross-OS CI checks are static build checks, not UI support certification.
 
-The project includes code derived from Mica for Zotero and is distributed under the applicable GNU AGPL terms. Upstream notices and corresponding source are retained. This project's free distribution policy describes the maintainers' practice and does not narrow downstream license rights.
+## Host acceptance limits
 
-## Community maintenance
+The connected Windows development environment is Windows 11 Home China build 26300 with Zotero 10.0.8 installed/running. This pass did not complete a full matrix of system DPI settings, mixed-DPI multi-monitor transitions, physical printing, eight-hour soak, all third-party plugin combinations, screen-reader acceptance, or macOS/Linux host tests. These are explicitly not claimed as passed.
 
-The project is sustained through non-financial contributions: reproducible bug reports, translation review, compatibility testing, documentation, code review, and pull requests. No payment is required or requested to use or contribute to the project.
+The 2.4.0 Stable label applies to the documented Windows 11 / Zotero 10.0.8 / PDF.js 5.7.0 target and the release scope above. It does not imply universal platform support or zero defects.
+
+## Open source and license
+
+The maintainers do not charge users and do not collect donations or sponsorship payments. All 12 themes and core features remain available to everyone. The project is distributed under applicable AGPL terms; this maintainer distribution policy does not narrow downstream license rights.
+
+## Community publication
+
+- GitHub source, release, and product showcase are the primary distribution points.
+- Zotero community marketplace PR #315 remains subject to maintainer review; submission is not acceptance.
+- No Zotero-operated official add-on directory listing is claimed.

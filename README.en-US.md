@@ -75,16 +75,20 @@ The project includes code derived from Mica for Zotero and is distributed under 
 
 Automated locale coverage is complete as a draft; native-speaker review is still required. See [internationalization status](docs/I18N-STATUS.md).
 
+[Compatibility matrix](docs/COMPATIBILITY.md) · [Platform adapter architecture](docs/PLATFORM-ADAPTER-ARCHITECTURE.md) · [Localization glossary](docs/LOCALIZATION-GLOSSARY.md)
+
 ## Install
 
-**Current public build: [TAIS Appearance 2.3.2 Beta (.xpi)](https://github.com/LIPO1024/tais-appearance/releases/download/v2.3.2/TAIS_Appearance-2.3.2.xpi)** · [Release notes and checksum](https://github.com/LIPO1024/tais-appearance/releases/tag/v2.3.2)
+**Current public build: [TAIS Appearance 2.4.0 Stable (.xpi)](https://github.com/LIPO1024/tais-appearance/releases/download/v2.4.0/TAIS_Appearance-2.4.0.xpi)** · [Release notes and checksum](https://github.com/LIPO1024/tais-appearance/releases/tag/v2.4.0)
 
 1. Download the XPI.
 2. In Zotero, open **Tools → Plugins**.
 3. Open the gear menu and choose **Install Plugin From File**.
 4. Select the downloaded XPI.
 
-This is a Beta build. Test it in a separate Zotero profile first and export your settings before upgrading a primary profile.
+This Stable release is validated for Windows 11 / Zotero 10.0.8 / PDF.js 5.7.0. Export your settings before upgrading a primary profile; other platforms and unlisted Zotero versions are not supported or verified.
+
+[Compatibility matrix and platform roadmap](docs/COMPATIBILITY.md) · [Platform adapter architecture](docs/PLATFORM-ADAPTER-ARCHITECTURE.md)
 
 ## Compatibility
 
