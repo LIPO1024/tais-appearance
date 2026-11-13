@@ -71,6 +71,7 @@ This is a beta build. Test it in a separate Zotero profile first and export your
 4. Select the downloaded XPI.
 
 The validated target is Windows 11 / Zotero 10.0.8 / PDF.js 5.7.0. macOS and Linux are not supported by the current Windows DWM material adapter. The five-language translations are machine-generated drafts and still require native-speaker review.
+
 ## Compatibility and safety
 
 | Environment | Status |
