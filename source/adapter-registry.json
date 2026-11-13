@@ -1,0 +1,109 @@
+{
+  "product": "TAIS Appearance",
+  "version": "2.2.1",
+  "host": "Tested locally: Windows 11 / Zotero 10.0.8 / PDF.js 5.7.0",
+  "architecture": {
+    "universal": "Known Zotero chrome UI and explicitly fingerprinted local tool documents; not all windows",
+    "pluginDetection": "DOM feature markers in the host document and embedded frames",
+    "surfacePolicy": "Background-only alpha; never fade text, icons, highlights, PDF canvas or annotations"
+  },
+  "adapters": [
+    {
+      "id": "ai4paper-v2@cpc.dev",
+      "name": "AI4Paper",
+      "mode": "dedicated-frame",
+      "framePrefix": "chrome://ai4paper/content/",
+      "preference": "compat-ai4paper"
+    },
+    {
+      "id": "zoterogpt@polygon.org",
+      "name": "Awesome GPT",
+      "mode": "dom-marker",
+      "markers": [
+        "#ai-prompt-editor",
+        ".cm-header",
+        ".citation-popover-inner"
+      ],
+      "preference": "compat-awesome-gpt"
+    },
+    {
+      "id": "zoteroreference@polygon.org",
+      "name": "Ethereal Reference",
+      "mode": "dom-marker",
+      "markers": [
+        ".graph-workspace",
+        ".workspace-panel",
+        "#connected-papers-side"
+      ],
+      "preference": "compat-ethereal-reference"
+    },
+    {
+      "id": "zoterostyle@polygon.org",
+      "name": "Ethereal Style",
+      "mode": "dom-marker",
+      "markers": [
+        ".margin-annotation-card",
+        ".jev-window",
+        ".annotation-manager"
+      ],
+      "preference": "compat-ethereal-style"
+    },
+    {
+      "id": "zoteroAddons@ytshen.com",
+      "name": "Add-on Market for Zotero",
+      "mode": "dom-marker",
+      "markers": [
+        ".virtualized-table .cell.menu-desc"
+      ],
+      "preference": "compat-addon-market"
+    },
+    {
+      "id": "zoteroattanger@polygon.org",
+      "name": "Zotero Attanger",
+      "mode": "dom-marker",
+      "markers": [
+        "#attanger-unused-pdf-preview",
+        "#unused-pdf-list"
+      ],
+      "preference": "compat-attanger"
+    },
+    {
+      "id": "zotero-format-metadata@northword.cn",
+      "name": "Linter for Zotero",
+      "mode": "dom-marker",
+      "markers": [
+        ".linter-shortcut-input"
+      ],
+      "preference": "compat-linter"
+    },
+    {
+      "id": "zoterotag@euclpts.com",
+      "name": "Actions and Tags for Zotero",
+      "mode": "universal-native-controls"
+    },
+    {
+      "id": "zoterocitation@polygon.org",
+      "name": "Easier Citation",
+      "mode": "universal-native-controls"
+    },
+    {
+      "id": "tara@linxzh.com",
+      "name": "蒲公英",
+      "mode": "universal-native-controls"
+    }
+  ],
+  "runtimeNotes": [
+    "AI4Paper same-origin about:srcdoc descendants are tagged and observed.",
+    "Plugin adapters are detected from DOM feature markers in their own documents.",
+    "Closed shadow roots cannot be themed by an external stylesheet; open shadow roots are detected only if the host exposes them.",
+    "Coverage classification is not a visual acceptance result; consult the current QA matrix.",
+    "1.4.2 adds reversible native PDF dark-theme coordination and exact item-pane-sidenav color/selection treatment; unknown platforms fail closed."
+  ],
+  "legacyProduct": "TAIS Zotero Glass",
+  "releaseStage": "Local candidate",
+  "stableAddOnId": "tais-zotero-glass@tais.local",
+  "safeMode": {
+    "preference": "extensions.taisZoteroGlass.safe-mode",
+    "behavior": "restore native owned styles; block reader and tool adapters"
+  }
+}

@@ -1,0 +1,42 @@
+/* Privileged tool windows only. One root tint; structural nodes stay transparent. */
+@-moz-document url-prefix("chrome://zotero/content/") {
+ :root[windowtype]:not(#main-window):not(#zotero-prefs):not([tais-zotero-glass]), :root#run-js:not([tais-zotero-glass]) { -moz-appearance:none!important;background-color:rgba(240,240,240,.01)!important; }
+}
+:root[data-tg-tool-surface][tais-zotero-glass]{
+ --in-content-page-background:transparent!important;
+ --in-content-page-color:var(--tg-text)!important;
+ --in-content-text-color:var(--tg-text)!important;
+ --in-content-deemphasized-text:var(--tg-muted)!important;
+ --in-content-box-background:var(--tg-card)!important;
+ --in-content-box-background-odd:transparent!important;
+ --in-content-box-border-color:var(--tg-border)!important;
+ --in-content-button-background:var(--tg-input)!important;
+ --in-content-button-background-hover:var(--tg-hover)!important;
+ --in-content-button-text-color:var(--tg-text)!important;
+ --in-content-link-color:var(--tg-accent-custom,#527eb7)!important;
+ --background-color-box:var(--tg-card)!important;
+ --background-color-canvas:transparent!important;
+ --text-color:var(--tg-text)!important;
+ color:var(--tg-text)!important;color-scheme:var(--tg-mode)!important;
+}
+:root[data-tg-tool-surface][data-tg-top="yes"]{background:rgb(var(--tg-rgb) / var(--tg-dialog-alpha,40%))!important;-moz-appearance:none!important;}
+:root[data-tg-tool-surface]:not([data-tg-top="yes"]),
+:root[data-tg-tool-surface] body,
+:root[data-tg-tool-surface] :is(#full,#content,#main,#sidebar,#categories,#appcontent,#browser,.main-content,.view-pane,.dialog-content){background:transparent!important;color:var(--tg-text)!important;}
+:root[data-tg-tool-surface="addons"] :is(.card.addon,.addon.card,.addon-detail-row){background:var(--tg-card)!important;color:var(--tg-text)!important;border-color:var(--tg-border)!important;box-shadow:0 1px 3px rgb(0 0 0 / .10)!important;}
+:root[data-tg-tool-surface="addons"] :is(.addon-description,.addon-detail-description,.disco-description,.addon-name,.list-section-heading,.header-name){color:var(--tg-text)!important;opacity:1!important;}
+:root[data-tg-tool-surface="addons"] :is(addon-page-header,.sticky-container,.main-heading){background:transparent!important;color:var(--tg-text)!important;}
+:root[data-tg-tool-surface="addons"] :is(panel-list,panel-item){--panel-background:var(--tg-popup)!important;--panel-color:var(--tg-text)!important;}
+:root[data-tg-tool-surface="preference-manager"] :is(#top,#left,#right,#bottom,vbox,hbox,.container){background:transparent!important;color:var(--tg-text)!important;border-color:var(--tg-border)!important;}
+:root[data-tg-tool-surface="preference-manager"] #left{background:var(--tg-side)!important;}
+:root[data-tg-tool-surface="preference-manager"] :is(label,span,.row,button){color:var(--tg-text)!important;}
+:root[data-tg-tool-surface="preference-manager"] .row:hover{background:var(--tg-hover)!important;}
+:root[data-tg-tool-surface="preference-manager"] :is(.selected,[aria-selected="true"]){background:var(--tg-selected)!important;}
+:root[data-tg-tool-surface] :is(button,toolbarbutton):not([disabled]){color:var(--tg-text)!important;}
+:root[data-tg-tool-surface] :is(button,toolbarbutton)[disabled]{color:var(--tg-disabled)!important;}
+:root[data-tg-tool-surface="native-tool"] :is(body>vbox,body>hbox,body>div:not(.ace_editor),.dialog-button-box){background:transparent!important;border-color:var(--tg-border)!important;color:var(--tg-text)!important;}
+/* Do not blanket recolor syntax tokens, editable content, PDF or note editors. */
+@media(forced-colors:active),(prefers-reduced-transparency:reduce){
+ :root[data-tg-tool-surface],:root[data-tg-tool-surface] body{background:Canvas!important;color:CanvasText!important;}
+ :root[data-tg-tool-surface] :is(.card.addon,#left,#right){background:Canvas!important;color:CanvasText!important;}
+}

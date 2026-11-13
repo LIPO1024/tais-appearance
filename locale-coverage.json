@@ -1,0 +1,34 @@
+{
+  "sourceStringCount": 558,
+  "localeKeyCount": {
+    "zh-CN": 578,
+    "en-US": 578,
+    "ja-JP": 578,
+    "ko-KR": 578,
+    "fr-FR": 578
+  },
+  "coverage": {
+    "zh-CN": 1.0,
+    "en-US": 1.0,
+    "ja-JP": 1.0,
+    "ko-KR": 1.0,
+    "fr-FR": 1.0
+  },
+  "missingCount": {
+    "zh-CN": 0,
+    "en-US": 0,
+    "ja-JP": 0,
+    "ko-KR": 0,
+    "fr-FR": 0
+  },
+  "missing": {
+    "zh-CN": [],
+    "en-US": [],
+    "ja-JP": [],
+    "ko-KR": [],
+    "fr-FR": []
+  },
+  "translationMethod": "Google Translate machine translation draft for strings not previously translated; native-speaker linguistic review required",
+  "runtime": "TGLocale JSON dictionary; exact and fragment lookup",
+  "status": "translation-complete-draft; not native-reviewed"
+}

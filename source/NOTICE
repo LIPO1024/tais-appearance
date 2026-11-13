@@ -1,0 +1,19 @@
+TAIS Zotero Glass 1.4.2 — modified 2026-11-12
+
+This derivative incorporates code from Mica for Zotero, authored by northword:
+https://github.com/northword/zotero-mica
+The upstream project declares GNU Affero General Public License v3.0 or later.
+The license text is preserved in LICENSE. Applicable notices and source obligations must remain intact.
+
+TAIS modifications: appearance tokens and adapters, independent PDF paper-background handling, settings transactions and UI, local background management, and tool-window adapters. Native drawing primitives are not replaced.
+
+Upstream source revision inspected: eb35b3e6f091e2e46d49fe7665230a5dc387e2ce (2026-09-03). The corresponding upstream addon, src, typings, package/build metadata, README and LICENSE are included in third_party/zotero-mica in the source repository/archive. Preserve all upstream notices and AGPL terms. Final review of every transitive dependency and bundled asset is still required.
+
+TAIS Appearance 1.6.0 is the display rebrand of TAIS Zotero Glass. Stable add-on identity and existing notices are retained. Mistlight vector backgrounds are original programmatic assets included as editable SVG and JavaScript source; no Apple fonts or wallpaper assets are redistributed.
+
+TAIS Appearance 2.0.0 adds a durable preference transaction journal, startup recovery, reversible theme preview and Safe Mode. Existing Mica-derived source and AGPL notices remain. Exact upstream revision and complete corresponding-source review remain release blockers.
+
+TAIS Appearance 2.2.0: consolidated responsive settings, accessible command navigation, guarded preview/profile transactions, and read-only UI contrast inspection. Native PDF drawing implementation remains from the previous local baseline. Existing upstream notices remain; corresponding-source review is still required before public distribution.
+
+TAIS Appearance 2.2.1: original Theatre AI Studio geometric stage mark and Stage Mist static vector artwork; refined setting copy and stock theme definitions. No Apple assets or font files redistributed. Upstream code/license obligations remain unchanged.
+\nTAIS Appearance 2.3.0: adds five-locale runtime dictionaries and language selection. Machine-generated translations are included as draft strings and require native-speaker review before a reviewed international release. No theme paywall is implemented; voluntary sponsorship does not restrict AGPL rights.\n

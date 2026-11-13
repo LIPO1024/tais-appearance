@@ -1,0 +1,8 @@
+const fs=require('fs'),assert=require('assert'),html=fs.readFileSync(__dirname+'/showcase/index.html','utf8'),copy=JSON.parse(fs.readFileSync(__dirname+'/showcase-copy-i18n.json','utf8')),checks=[];function test(n,f){f();checks.push(n);}
+test('Showcase copy contains five languages',()=>{for(const l of ['en','zh','ja','ko','fr'])assert(copy[l]&&Object.keys(copy[l]).length===40);});
+test('Theme gallery contains twelve distinct themes',()=>{assert(html.includes("const themes=["));assert.equal((html.match(/\['(?:Daylight|Silver Mist|Glacier|Warm Paper|Forest|Iris|Black Box|Amber Stage|Velvet|Graphite|Deep Sea|Obsidian)'/g)||[]).length,12);});
+test('Theme preview, mode toggle and paper controls are interactive',()=>{for(const x of ["addEventListener('click'","paperAlpha","surroundAlpha","document.body.classList.toggle('dark')"])assert(html.includes(x));});
+test('Responsive layout and semantic labels exist',()=>{assert(html.includes('@media(max-width:820px)'));assert(html.includes('@media(max-width:560px)'));assert(html.includes('aria-label="Language"'));assert(html.includes('aria-label="Illustrative Zotero workspace preview"'));});
+test('No remote scripts, fonts, images, or analytics',()=>{assert(!/<script[^>]+src=/i.test(html));assert(!/<link[^>]+href="https?:/i.test(html));assert(!/<img[^>]+src="https?:/i.test(html));assert(!/google-analytics|gtag\(|hotjar|segment\.com/i.test(html));});
+test('Illustrative UI is clearly distinguished from live Zotero screenshots',()=>{assert(html.includes('not screenshots of a live Zotero session'));});
+fs.writeFileSync(__dirname+'/showcase-results.json',JSON.stringify({passed:checks.length,checks},null,2));console.log('showcase checks',checks.length);

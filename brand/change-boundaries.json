@@ -1,0 +1,18 @@
+{
+  "version": "2.2.1",
+  "stableID": "tais-zotero-glass@tais.local",
+  "changed": [
+    "settings copy",
+    "stock template definitions",
+    "builtin background vector",
+    "brand assets",
+    "package metadata"
+  ],
+  "protected": [
+    "PDF native draw hooks",
+    "user preferences",
+    "saved profiles",
+    "user background file",
+    "metadata/annotation data"
+  ]
+}

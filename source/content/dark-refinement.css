@@ -1,0 +1,76 @@
+/* 1.4.2: one background plane per region; native PDF theme owns glyph colors. */
+/* 2.1 Dark Reading System: role-based neutral graphite layers. */
+:root[tais-zotero-glass][data-tais-glass-theme="dark"]{
+ --tg-text:#F0F3F8;--tg-muted:#C7D0DC;--tg-disabled:#929EAD;
+ --tg-rgb:var(--tg-dark-safe-rgb,30 36 45);
+ --tg-root:rgb(var(--tg-rgb) / var(--tg-dark-window-alpha,44%));
+ --tg-panel:rgb(var(--tg-rgb) / max(var(--tais-panel-alpha,38%),var(--tg-dark-panel-min,42%)));
+ --tg-side:rgb(var(--tg-rgb) / max(var(--tais-sidebar-alpha,42%),var(--tg-dark-sidebar-min,46%)));
+ --tg-toolbar:rgb(var(--tg-rgb) / max(var(--tais-toolbar-alpha,38%),var(--tg-dark-toolbar-min,40%)));
+ --tg-card:rgb(var(--tg-card-rgb) / max(var(--tais-card-alpha,42%),var(--tg-dark-card-min,47%)));
+ --tg-ai-card:rgb(var(--tg-card-rgb) / max(var(--tais-ai4paper-alpha,42%),var(--tg-dark-card-min,47%)));
+ --tg-input:rgb(var(--tg-card-rgb) / max(var(--tais-input-alpha,52%),var(--tg-dark-input-min,54%)));
+ --tg-popup:rgb(var(--tg-card-rgb) / max(var(--tais-popup-alpha,82%),var(--tg-dark-popup-min,82%)));
+ --tg-border:rgb(190 204 222 / max(var(--tais-border-alpha,18%),13%));
+ --tg-hover:rgb(218 230 245 / 8%);--tg-mode:dark;
+ --fill-primary:var(--tg-text)!important;--fill-secondary:var(--tg-muted)!important;--fill-tertiary:var(--tg-disabled)!important;
+ --color-background:var(--tg-panel)!important;--color-background30:var(--tg-panel)!important;
+ --color-background50:var(--tg-card)!important;--color-background70:var(--tg-input)!important;
+ --color-sidepane:var(--tg-side)!important;--color-toolbar:var(--tg-toolbar)!important;
+ --color-tabbar:var(--tg-toolbar)!important;--color-control:var(--tg-input)!important;--color-menu:var(--tg-popup)!important;
+ color:var(--tg-text)!important;color-scheme:dark!important;
+}
+:root[tais-zotero-glass][data-tais-glass-theme="dark"] :is(#zotero-items-pane,#zotero-collections-pane,#zotero-context-pane,#zotero-tag-selector){color:var(--tg-text)!important;}
+:root[tais-zotero-glass][data-tais-glass-theme="dark"] :is(#zotero-items-tree,#zotero-collections-tree) .row{color:var(--tg-text)!important;}
+:root[tais-zotero-glass][data-tais-glass-theme="dark"] :is(input:not([type="range"]):not([type="checkbox"]):not([type="radio"]):not([type="color"]),textarea,select,textbox){color:var(--tg-text)!important;background-color:var(--tg-input)!important;caret-color:var(--tg-text)!important;}
+:root[tais-zotero-glass][data-tais-glass-theme="dark"] :is(input,textarea)::placeholder{color:#AAB6C5!important;opacity:1!important;}
+
+:root[tais-zotero-glass][data-tais-glass-theme="dark"][data-tg-top="yes"][data-tg-dialog="yes"]{
+ background:rgb(var(--tg-rgb) / max(var(--tg-dialog-alpha,40%),70%))!important;
+}
+/* Literal foregrounds, never parent opacity. Semantic annotation colors are not targeted. */
+:root[tais-zotero-glass][data-tais-glass-theme="dark"] :is(#zotero-item-pane,#zotero-context-pane) :is(.meta-data-label,.metadata-label,.field-label,.section-title,.section-header,label){color:var(--tg-muted)!important;opacity:1!important;}
+:root[tais-zotero-glass][data-tais-glass-theme="dark"] :is(#zotero-item-pane,#zotero-context-pane) :is(editable-text .input,input,textarea){color:var(--tg-text)!important;caret-color:var(--tg-text)!important;}
+:root[tais-zotero-glass][data-tais-glass-theme="dark"] :is(#zotero-item-pane,#zotero-context-pane) a{color:#b6d7ff!important;}
+@-moz-document url-prefix("resource://zotero/reader/reader.html"){
+ :root[tais-zotero-glass][data-tais-glass-theme="dark"] #annotationsView :is(.annotation-text,.annotation-comment,.comment,.text,.page-label,.author-name){color:var(--tg-text)!important;opacity:1!important;text-shadow:none!important;}
+}
+/* Sidenav: remove the tall grouping highlight, retain individual state and grouping cue. */
+:root[tais-zotero-glass] item-pane-sidenav{background:var(--tg-side)!important;color:var(--tg-text)!important;}
+:root[tais-zotero-glass] item-pane-sidenav :is(.inherit-flex,.inherit-flex.highlight,.pin-wrapper,[id="explore-reader-button"],[id="preview-reader-button"]){background-color:transparent!important;}
+:root[tais-zotero-glass] item-pane-sidenav .inherit-flex[aria-selected="true"]{box-shadow:inset 2px 0 0 color-mix(in srgb,var(--tg-accent-custom,#527eb7) 70%,transparent);border-radius:4px;}
+:root[tais-zotero-glass] item-pane-sidenav .btn{background-color:transparent!important;border-radius:5px;}
+:root[tais-zotero-glass] item-pane-sidenav .btn:hover{background-color:var(--tg-hover)!important;}
+:root[tais-zotero-glass] item-pane-sidenav :is(.btn[aria-selected="true"],.btn[pinned="true"]){background-color:var(--tg-selected)!important;}
+:root[tais-zotero-glass] item-pane-sidenav :is(.btn,.inherit-flex):focus-visible{outline:2px solid var(--tg-accent-custom,#527eb7)!important;outline-offset:1px;}
+/* Context-fill icons retain their meaning and shape. Only dark palette lightness is adjusted. */
+:root[tais-zotero-glass][data-tais-glass-theme="dark"] item-pane-sidenav .btn[data-pane="info"]{fill:#9abaff!important;}
+:root[tais-zotero-glass][data-tais-glass-theme="dark"] item-pane-sidenav .btn[data-pane="abstract"]{fill:#9ed2ff!important;}
+:root[tais-zotero-glass][data-tais-glass-theme="dark"] item-pane-sidenav .btn:is([data-pane="attachments"],[data-pane="attachment-info"]){fill:#8dddab!important;}
+:root[tais-zotero-glass][data-tais-glass-theme="dark"] item-pane-sidenav .btn:is([data-pane="notes"],[data-pane="note-info"],[data-pane="context-notes"]){fill:#ffd38a!important;}
+:root[tais-zotero-glass][data-tais-glass-theme="dark"] item-pane-sidenav .btn[data-pane="libraries-collections"]{fill:#8dd8e8!important;}
+:root[tais-zotero-glass][data-tais-glass-theme="dark"] item-pane-sidenav .btn[data-pane="tags"]{fill:#ffb495!important;}
+:root[tais-zotero-glass][data-tais-glass-theme="dark"] item-pane-sidenav .btn[data-pane="related"]{fill:#edb29b!important;}
+:root[tais-zotero-glass][data-tais-glass-theme="dark"] item-pane-sidenav .btn:is([custom="true"],[data-action]){fill:var(--tg-muted)!important;color:var(--tg-muted)!important;}
+@media(forced-colors:active){
+ :root[tais-zotero-glass][data-tais-glass-theme="dark"]{--tg-text:CanvasText!important;--tg-muted:CanvasText!important;--tg-disabled:GrayText!important;--tg-root:Canvas!important;--tg-panel:Canvas!important;--tg-side:Canvas!important;--tg-toolbar:Canvas!important;--tg-popup:Canvas!important;}
+ :root[tais-zotero-glass] item-pane-sidenav .btn{fill:ButtonText!important;}
+}
+@media(prefers-reduced-transparency:reduce){
+ :root[tais-zotero-glass][data-tais-glass-theme="dark"]{--tg-root:rgb(var(--tg-rgb))!important;--tg-panel:rgb(var(--tg-rgb))!important;--tg-side:rgb(var(--tg-rgb))!important;--tg-toolbar:rgb(var(--tg-rgb))!important;}
+}
+
+/* Keep native high-contrast semantics above the per-pane dark icon palette. */
+@media(forced-colors:active){
+ :root[tais-zotero-glass][data-tais-glass-theme="dark"] item-pane-sidenav .btn:is([data-pane],[data-action],[custom="true"]){fill:ButtonText!important;color:ButtonText!important;}
+}
+
+/* Dark text hierarchy; PDF.js glyphs/canvas/textLayer are deliberately excluded. */
+:root[tais-zotero-glass][data-tais-glass-theme="dark"] :is(#zotero-item-pane,#zotero-context-pane) :is(label,.meta-data-label,.metadata-label,.field-label,.section-title,.section-header){color:#C7D0DC!important;opacity:1!important;}
+:root[tais-zotero-glass][data-tais-glass-theme="dark"] :is(#zotero-item-pane,#zotero-context-pane) :is(input,textarea,editable-text .input){background:rgb(54 64 78 / .58)!important;color:#F0F3F8!important;border-color:rgb(194 208 226 / .16)!important;}
+:root[tais-zotero-glass][data-tais-glass-theme="dark"] :is(#zotero-item-pane,#zotero-context-pane) :is(input,textarea,editable-text .input):focus{background:rgb(61 74 91 / .72)!important;outline:2px solid #91BDEB!important;}
+@-moz-document url-prefix("resource://zotero/reader/reader.html"){
+ :root[tais-zotero-glass][data-tais-glass-theme="dark"] #annotationsView .annotation{background:rgb(43 52 65 / .76)!important;color:#F0F3F8!important;border-color:rgb(190 204 222 / .16)!important;}
+ :root[tais-zotero-glass][data-tais-glass-theme="dark"] #annotationsView .annotation :is(.annotation-text,.annotation-comment,.comment,.text,.page-label,.author-name){color:#F0F3F8!important;opacity:1!important;text-shadow:none!important;}
+ :root[tais-zotero-glass][data-tais-glass-theme="dark"] #annotationsView .annotation :is(.annotation-comment,.author-name,.page-label){color:#C7D0DC!important;}
+}

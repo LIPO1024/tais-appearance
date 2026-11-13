@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#121c2a"/><stop offset="1" stop-color="#2b4358"/></linearGradient>
+ <linearGradient id="t" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f1faff"/><stop offset="1" stop-color="#b7ddeb"/></linearGradient>
+ <linearGradient id="pane" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#83c9df" stop-opacity=".22"/><stop offset="1" stop-color="#8ca8d8" stop-opacity=".04"/></linearGradient>
+ <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="9"/></filter>
+ </defs>
+ <rect x="15" y="15" width="482" height="482" rx="113" fill="url(#bg)" stroke="#bee5f0" stroke-opacity=".45" stroke-width="4"/>
+ <rect x="59" y="59" width="391" height="394" rx="85" fill="url(#pane)" stroke="#b7e1ed" stroke-opacity=".42" stroke-width="5"/>
+ <path d="M88 88H320l72 35" fill="none" stroke="#e1f8ff" stroke-opacity=".48" stroke-width="4" stroke-linecap="round"/>
+ <path d="M285 84L421 151V357L325 417V183Z" fill="#5aa0c6" fill-opacity=".15" stroke="#96d3e4" stroke-opacity=".4" stroke-width="3"/>
+ <path d="M102 135H409a22 22 0 0 1 22 22v26a22 22 0 0 1-22 22H102a22 22 0 0 1-22-22v-26a22 22 0 0 1 22-22Z" fill="url(#t)"/>
+ <rect x="221" y="170" width="68" height="226" rx="22" fill="url(#t)"/>
+ <path d="M383 83l12 29 29 12-29 12-12 29-12-29-29-12 29-12Z" fill="#e2f7ff" fill-opacity=".9"/>
+ <rect x="358" y="369" width="51" height="16" rx="8" fill="#65d3da"/>
+</svg>

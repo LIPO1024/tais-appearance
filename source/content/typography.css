@@ -1,0 +1,24 @@
+/* HIG-informed Windows typography. Scope excludes PDF canvas/textLayer and document/note editors. */
+:root[tais-zotero-glass][data-tg-readable-ui="yes"]{--tg-ui-family:system-ui,"Segoe UI Variable Text","Segoe UI","Microsoft YaHei UI",sans-serif;}
+/* Metadata is a flowing inspector, not a virtualized table. Let editable-text's mirror inherit the same metrics. */
+:root[tais-zotero-glass][data-tg-readable-ui="yes"][data-tg-type-ui="custom"] :is(#zotero-item-pane,#zotero-context-pane){font-family:var(--tg-ui-family)!important;font-size:var(--tg-ui-font)!important;line-height:1.55!important;}
+:root[tais-zotero-glass][data-tg-readable-ui="yes"][data-tg-type-ui="custom"] :is(#zotero-item-pane,#zotero-context-pane) :is(editable-text,editable-text .input,.meta-data,.meta-data-value,.title-head,.section-title){font-family:var(--tg-ui-family)!important;font-size:inherit!important;font-weight:var(--tg-ui-weight)!important;line-height:1.55!important;letter-spacing:normal!important;text-shadow:none!important;}
+:root[tais-zotero-glass][data-tg-readable-ui="yes"][data-tg-type-ui="custom"] :is(#zotero-item-pane,#zotero-context-pane) :is(.key,.meta-data-label,.metadata-label,.field-label){font-family:var(--tg-ui-family)!important;font-size:var(--tg-ui-small)!important;line-height:1.55!important;font-weight:var(--tg-label-weight)!important;opacity:1!important;}
+:root[tais-zotero-glass][data-tg-readable-ui="yes"][data-tg-type-ui="custom"] :is(#zotero-item-pane,#zotero-context-pane) .meta-row{min-height:28px;align-items:start;}
+:root[tais-zotero-glass][data-tg-readable-ui="yes"][data-tg-type-ui="custom"] :is(#zotero-item-pane,#zotero-context-pane) editable-text{min-width:0;}
+:root[tais-zotero-glass][data-tg-readable-ui="yes"][data-tg-type-ui="custom"] :is(#zotero-item-pane,#zotero-context-pane) :is(input,textarea){font-family:var(--tg-ui-family)!important;font-size:var(--tg-ui-font)!important;line-height:1.55!important;min-height:26px;caret-color:var(--tg-text)!important;}
+/* No blanket opacity on descendants: the native hidden measuring renderer MUST remain hidden. */
+@-moz-document url-prefix("resource://zotero/reader/reader.html"){
+ :root[tais-zotero-glass][data-tg-readable-ui="yes"][data-tg-type-annotation="custom"] #annotationsView .annotation :is(.content,.renderer,.annotation-text,.annotation-comment){font-family:var(--tg-ui-family)!important;font-size:var(--tg-annotation-font)!important;font-weight:var(--tg-ui-weight)!important;line-height:var(--tg-annotation-leading)!important;letter-spacing:normal!important;color:var(--tg-text)!important;text-shadow:none!important;font-optical-sizing:auto;}
+ :root[tais-zotero-glass][data-tg-readable-ui="yes"][data-tg-type-annotation="custom"] #annotationsView .annotation .preview.expanded0 .content{-webkit-line-clamp:5!important;}
+ :root[tais-zotero-glass][data-tg-readable-ui="yes"][data-tg-type-annotation="custom"] #annotationsView .annotation :is(.text,.comment){color:var(--tg-text)!important;}
+ :root[tais-zotero-glass][data-tg-readable-ui="yes"][data-tg-type-annotation="custom"] #annotationsView .annotation .header{min-height:24px;line-height:1.4!important;align-items:center;}
+ :root[tais-zotero-glass][data-tg-readable-ui="yes"][data-tg-type-annotation="custom"] #annotationsView .annotation .header :is(.label,.page-label,.author-name){font-family:var(--tg-ui-family)!important;font-size:var(--tg-ui-small)!important;line-height:1.4!important;font-weight:var(--tg-label-weight)!important;}
+ :root[tais-zotero-glass][data-tg-readable-ui="yes"][data-tg-type-annotation="custom"] #annotationsView .annotation .tags{line-height:1.55!important;}
+ :root[tais-zotero-glass][data-tg-readable-ui="yes"][data-tg-type-annotation="custom"] #annotationsView .annotation .tag{font-family:var(--tg-ui-family)!important;font-size:var(--tg-ui-small)!important;line-height:1.55!important;font-weight:400!important;}
+}
+/* Known third-party UI reading cards, not text painted on the PDF. Semantic highlights are untouched. */
+:root[tais-zotero-glass][data-tg-readable-ui="yes"][data-tg-type-annotation="custom"][data-tais-adapter-ethereal-style="on"] :is(.margin-annotation-card-body,.margin-annotation-card-text,.margin-annotation-comment){font-family:var(--tg-ui-family)!important;font-size:var(--tg-annotation-font)!important;line-height:var(--tg-annotation-leading)!important;font-weight:var(--tg-ui-weight)!important;color:var(--tg-text)!important;text-shadow:none!important;}
+/* Settings inherit native type unless custom UI typography is enabled. Layout stays in preferences.css. */
+:root[tais-zotero-glass][data-tg-readable-ui="yes"][data-tg-type-ui="custom"] #tg-workbench[data-ui="220"]{font-family:var(--tg-ui-family)!important;font-size:var(--tg-ui-font)!important;line-height:1.55!important;font-weight:var(--tg-ui-weight,400);}
+@media(forced-colors:active){:root[tais-zotero-glass] #tg-workbench[data-ui="220"]{color:CanvasText!important;}}

@@ -1,0 +1,210 @@
+/* TAIS Glass 1.2.0: single scoped renderer. Paper/notes content remain untouched. */
+@-moz-document url("chrome://zotero/content/zoteroPane.xhtml"),url("chrome://zotero/content/reader.xhtml") {
+ :root { -moz-appearance:none !important; background-color:rgba(240,240,240,.01) !important; }
+}
+/* TAIS Zotero Glass 1.1.0 — one paired palette, one native backdrop owner.
+ * Only background paint is translucent. PDF page contents and user notes are excluded.
+ */
+:root[tais-zotero-glass] {
+  --tg-rgb: var(--tg-light-custom,246 249 252);
+  --tg-card-rgb: 255 255 255;
+  --tg-text: #182330;
+  --tg-muted: #405064;
+  --tg-disabled: #748193;
+  --tg-edge: 50 65 83;
+  --tg-mode: light;
+  --tg-root: rgb(var(--tg-rgb) / var(--tais-window-alpha, 10%));
+  --tg-panel: rgb(var(--tg-rgb) / var(--tais-panel-alpha, 6%));
+  --tg-side: rgb(var(--tg-rgb) / var(--tais-sidebar-alpha, 12%));
+  --tg-toolbar: rgb(var(--tg-rgb) / var(--tais-toolbar-alpha, 10%));
+  --tg-card: rgb(var(--tg-card-rgb) / var(--tais-card-alpha, 36%));
+  --tg-ai-card: rgb(var(--tg-card-rgb) / var(--tais-ai4paper-alpha, 34%));
+  --tg-input: rgb(var(--tg-card-rgb) / var(--tais-input-alpha, 88%));
+  --tg-popup: rgb(var(--tg-card-rgb) / var(--tais-popup-alpha, 94%));
+  --tg-border: rgb(var(--tg-edge) / var(--tais-border-alpha, 18%));
+  --tg-hover: rgb(var(--tg-edge) / var(--tg-hover-alpha,9%));
+  --tg-selected: color-mix(in srgb,var(--tg-accent-custom,#527eb7) var(--tais-selection-alpha,30%),transparent);
+  --fill-primary: var(--tg-text) !important;
+  --fill-secondary: var(--tg-muted) !important;
+  --fill-tertiary: var(--tg-disabled) !important;
+  --fill-quarternary: rgb(var(--tg-edge) / 26%) !important;
+  --fill-quinary: rgb(var(--tg-edge) / 13%) !important;
+  --fill-senary: rgb(var(--tg-edge) / 6%) !important;
+  --color-background: var(--tg-panel) !important;
+  --color-background30: var(--tg-panel) !important;
+  --color-background50: var(--tg-card) !important;
+  --color-background70: var(--tg-input) !important;
+  --color-sidepane: var(--tg-side) !important;
+  --color-toolbar: var(--tg-toolbar) !important;
+  --color-tabbar: var(--tg-toolbar) !important;
+  --color-button: var(--tg-card) !important;
+  --color-control: var(--tg-input) !important;
+  --color-menu: var(--tg-popup) !important;
+  --color-border: var(--tg-border) !important;
+  --color-border50: var(--tg-border) !important;
+  --color-panedivider: var(--tg-border) !important;
+  --color-stripe: transparent !important;
+  --color-quinary-on-background: var(--tg-card) !important;
+  --color-quarternary-on-background: var(--tg-hover) !important;
+  --color-quarternary-on-sidepane: var(--tg-hover) !important;
+  --material-background: var(--tg-panel) !important;
+  --material-sidepane: var(--tg-side) !important;
+  --material-toolbar: var(--tg-toolbar) !important;
+  --material-border: 1px solid var(--tg-border) !important;
+  --material-border50: 1px solid var(--tg-border) !important;
+  --material-panedivider: 1px solid var(--tg-border) !important;
+  --material-border-quinary: 1px solid var(--tg-border) !important;
+  color: var(--tg-text) !important;
+  color-scheme: var(--tg-mode) !important;
+}
+:root[tais-zotero-glass][data-tais-glass-theme="light"] {
+  --tg-rgb: var(--tg-light-custom,246 249 252);
+  --tg-card-rgb: 255 255 255;
+  --tg-text: #182330;
+  --tg-muted: #405064;
+  --tg-disabled: #748193;
+  --tg-edge: 50 65 83;
+  --tg-mode: light;
+}
+:root[tais-zotero-glass][data-tais-glass-theme="dark"] {
+  --tg-rgb: var(--tg-dark-custom,24 30 39);
+  --tg-card-rgb: 37 45 57;
+  --tg-text: #ffffff;
+  --tg-muted: #e5edf7;
+  --tg-disabled: #aab7c8;
+  --tg-edge: 199 215 236;
+  --tg-mode: dark;
+}
+:root[tais-zotero-glass][data-tais-contrast="normal"] {
+  --fill-secondary: color-mix(in srgb, var(--tg-text) 75%, transparent) !important;
+}
+/* Main native window and structural containers: never stack the same tint at every depth. */
+:root[tais-zotero-glass][data-tg-top="yes"] {
+  -moz-appearance: none !important;
+  background: var(--tg-root) !important;
+}
+:root[tais-zotero-glass] :is(#zotero-pane,#zotero-pane-stack,#zotero-items-pane-container,#zotero-context-pane-inner,.zotero-pane,.virtualized-table,.virtualized-table-body,.virtualized-table-container,.windowed-list,.windowed-list-inner-container,#zotero-items-tree,#zotero-collections-tree) {
+  background: transparent !important;
+}
+:root[tais-zotero-glass] #zotero-items-pane { background: var(--tg-panel) !important; }
+:root[tais-zotero-glass] :is(#zotero-collections-pane,#zotero-context-pane,#zotero-tag-selector) { background: var(--tg-side) !important; }
+:root[tais-zotero-glass] #zotero-item-pane { background: transparent !important; }
+:root[tais-zotero-glass] :is(#zotero-title-bar,#tab-bar-container,#zotero-tabs-toolbar,.zotero-toolbar,#zotero-toolbar-collection-tree,#zotero-toolbar-item-tree,.virtualized-table-header) {
+  background: var(--tg-toolbar) !important;
+  color: var(--tg-text) !important;
+  border-color: var(--tg-border) !important;
+}
+:root[tais-zotero-glass] #zotero-items-tree .row:not(.selected):not([aria-selected="true"]) { background: transparent !important; }
+:root[tais-zotero-glass] :is(#zotero-items-tree,#zotero-collections-tree) .row:not(.selected):not([aria-selected="true"]):hover { background: var(--tg-hover) !important; }
+:root[tais-zotero-glass] :is(#zotero-items-tree,#zotero-collections-tree) .row:is(.selected,[aria-selected="true"]) { background: var(--tg-selected) !important; color:var(--tg-text) !important; }
+/* Keep real buttons, ranges, checkboxes and semantic colors; only text-entry backgrounds change. */
+:root[tais-zotero-glass] :is(input:not([type="range"]):not([type="checkbox"]):not([type="radio"]):not([type="color"]),textarea,select,textbox):not(#tg-workbench *) {
+  background-color: var(--tg-input) !important;
+  color: var(--tg-text) !important;
+  caret-color: var(--tg-text) !important;
+  border-color: var(--tg-border) !important;
+}
+:root[tais-zotero-glass] :is(input,textarea)::placeholder { color:var(--tg-muted) !important; opacity:1 !important; }
+:root[tais-zotero-glass] :is(button,toolbarbutton,input,textarea,select):focus-visible { outline:var(--tg-focus-width,2px) solid var(--tg-accent-custom,#527eb7) !important; outline-offset:1px; }
+:root[tais-zotero-glass] :is(menupopup,tooltip,panel[type="arrow"],.context-menu) { background:var(--tg-popup) !important; color:var(--tg-text) !important; border-color:var(--tg-border) !important; }
+/* Reader controls are a different document from PDF.js page contents. */
+@-moz-document url-prefix("resource://zotero/reader/reader.html") {
+  :root[tais-zotero-glass], :root[tais-zotero-glass] :is(body,#reader-ui,#sidebarContent,#annotationsView,.annotations) { background:transparent !important; color:var(--tg-text) !important; }
+  :root[tais-zotero-glass] #sidebarContainer { background:var(--tg-side) !important; }
+  :root[tais-zotero-glass] :is(.toolbar,.sidebar-toolbar) { background:var(--tg-toolbar) !important; color:var(--tg-text) !important; }
+  :root[tais-zotero-glass] :is(.toolbar,.sidebar-toolbar):-moz-window-inactive { opacity:1 !important; }
+  :root[tais-zotero-glass] #annotationsView .annotation:not(.selected) { background:rgb(var(--tg-card-rgb) / var(--tg-reader-card-alpha,46%)) !important; color:var(--tg-text) !important; outline:1px solid var(--tg-border) !important; box-shadow:none !important; }
+  :root[tais-zotero-glass] #annotationsView .annotation:not(.selected):hover { background:color-mix(in srgb,var(--tg-card) 85%,var(--tg-hover)) !important; }
+  :root[tais-zotero-glass] #annotationsView .annotation.selected { background:var(--tg-selected) !important; outline:var(--tg-focus-width,2px) solid var(--tg-accent-custom,#527eb7) !important; color:var(--tg-text) !important; }
+  :root[tais-zotero-glass] #annotationsView .selector { background:var(--tg-side) !important; border-color:var(--tg-border) !important; }
+  :root[tais-zotero-glass] :is(.view-popup,.find-popup,.modal-popup,.context-menu,.editor-toolbar):not(.image-popup) { --color-background:var(--tg-popup) !important; background:var(--tg-popup) !important; color:var(--tg-text) !important; border-color:var(--tg-border) !important; }
+}
+/* PDF paper/canvas/highlights are NOT selected. Only the surrounding viewport is transparent. */
+
+/* AI4Paper: paired tokens, including same-origin srcdoc children. One outer layer; cards and inputs have their own alpha. */
+:root[data-tais-glass-plugin="ai4paper"] {
+  --a4p-bg: transparent !important;
+  --a4p-bg2: var(--tg-panel) !important;
+  --a4p-bg3: var(--tg-ai-card) !important;
+  --a4p-text: var(--tg-text) !important;
+  --a4p-text2: var(--tg-text) !important;
+  --a4p-text3: var(--tg-muted) !important;
+  --a4p-text4: var(--tg-muted) !important;
+  --a4p-text-soft: var(--tg-muted) !important;
+  --a4p-text-muted: var(--tg-muted) !important;
+  --a4p-text-faint: var(--tg-muted) !important;
+  --a4p-border: var(--tg-border) !important;
+  --a4p-border2: var(--tg-border) !important;
+  --a4p-page-bg: transparent !important;
+  --a4p-card-bg: var(--tg-ai-card) !important;
+  --a4p-card-bg-soft: var(--tg-ai-card) !important;
+  --a4p-card-border: var(--tg-border) !important;
+  --a4p-input-bg: var(--tg-input) !important;
+  --a4p-input-border: var(--tg-border) !important;
+  --a4p-dialog-bg: var(--tg-popup) !important;
+  --a4p-dialog-surface: var(--tg-popup) !important;
+  --a4p-dialog-surface-soft: var(--tg-card) !important;
+  --a4p-dialog-text: var(--tg-text) !important;
+  --a4p-dialog-text-soft: var(--tg-muted) !important;
+  --a4p-dialog-text-muted: var(--tg-muted) !important;
+  --a4p-chat-ai: var(--tg-ai-card) !important;
+  --a4p-chat-ai-text: var(--tg-text) !important;
+  --a4p-tool-bg: var(--tg-card) !important;
+  --a4p-model-bg: var(--tg-input) !important;
+  --a4p-model-text: var(--tg-text) !important;
+  --a4p-quota-bg: var(--tg-card) !important;
+  --a4p-quota-text: var(--tg-muted) !important;
+  --ov-bg: transparent !important;
+  --ov-surface: var(--tg-ai-card) !important;
+  --ov-border: var(--tg-border) !important;
+  --ov-text: var(--tg-text) !important;
+  --ov-muted: var(--tg-muted) !important;
+  --cm-bg: transparent !important;
+  --cm-surface: var(--tg-ai-card) !important;
+  --cm-side: var(--tg-side) !important;
+  --cm-border: var(--tg-border) !important;
+  --cm-text: var(--tg-text) !important;
+  --cm-muted: var(--tg-muted) !important;
+  --cm-hover: var(--tg-hover) !important;
+  --cm-active: var(--tg-selected) !important;
+  background:transparent !important;
+}
+:root[data-tais-glass-plugin="ai4paper"] :is(body,#container,#app,.a4p-root,.chat-container) { background:transparent !important; color:var(--tg-text) !important; }
+:root[data-tais-glass-plugin="ai4paper"] :is(.toolbar,.a4p-card,.a4p-nws-sheet,.dh-root,.fc-root,.msg-ai,.a4p-cui-msg-row-ai .a4p-cui-msg-bubble) { background:var(--tg-ai-card) !important; color:var(--tg-text) !important; border-color:var(--tg-border) !important; }
+:root[data-tais-glass-plugin="ai4paper"] :is(#source-text,#result-text,#result-math,textarea,select,input:not([type="checkbox"]):not([type="radio"]):not([type="range"])) { background:var(--tg-input) !important; color:var(--tg-text) !important; border-color:var(--tg-border) !important; }
+:root[data-tais-glass-plugin="ai4paper"][data-tais-glass-theme="light"] { --a4p-accent:#405fc2 !important; --a4p-accent-text:#fff !important; --a4p-code-pre:#eaf0f6 !important; --a4p-code-text:#253243 !important; }
+:root[data-tais-glass-plugin="ai4paper"][data-tais-glass-theme="dark"] { --a4p-accent:#aac0ff !important; --a4p-accent-text:#162131 !important; --a4p-code-pre:#18222e !important; --a4p-code-text:#e4edf7 !important; }
+/* Other installed adapters: only their known surfaces, no universal div rule. */
+:root[data-tais-adapter-awesome-gpt="on"] :is(#ai-prompt-editor,#ai-prompt-toolbar,#ai-prompt-text-wrap,.citation-popover-inner,.cm-header,.cm-sidebar,.cm-content,.cm-filter-tabs,.cm-paper-row) { background:var(--tg-card) !important; color:var(--tg-text) !important; border-color:var(--tg-border) !important; }
+:root[data-tais-adapter-ethereal-reference="on"] :is(.workspace-panel,.workspace-composer,#connected-papers-side,.origin-items .item,.items-container .reference-item,.workspace-tabs,.search-box,.graph-view-badge) { background:var(--tg-card) !important; color:var(--tg-text) !important; border-color:var(--tg-border) !important; }
+:root[data-tais-adapter-ethereal-style="on"] :is(.margin-annotation-card,.margin-annotation-menu,.margin-annotation-settings-popover,.margin-annotation-card-body,.jev-window,.jev-credentials,.jev-collection-list,#zoterostyle-prompt,.style-attachment-preview,#explore-pane,.tag-selector-filter-pane,.note-manager .item.note,#tab-manager .items,#tab-manager .item) { background:var(--tg-card) !important; color:var(--tg-text) !important; border-color:var(--tg-border) !important; }
+:root[data-tais-adapter-attanger="on"] :is(#attanger-unused-pdf-preview,#unused-pdf-toolbar,#unused-pdf-list) { background:var(--tg-card) !important; color:var(--tg-text) !important; }
+:root[data-tais-adapter-linter="on"] .linter-shortcut-input { background:var(--tg-input) !important; color:var(--tg-text) !important; }
+/* System accessibility settings override glass rather than fading controls. */
+@media (prefers-reduced-transparency: reduce) {
+  :root[tais-zotero-glass] { --tg-root:rgb(var(--tg-rgb)) !important; --tg-panel:rgb(var(--tg-rgb)) !important; --tg-side:rgb(var(--tg-rgb)) !important; --tg-card:rgb(var(--tg-card-rgb)) !important; --tg-ai-card:rgb(var(--tg-card-rgb)) !important; }
+}
+@media (forced-colors: active) {
+  :root[tais-zotero-glass] { --tg-text:CanvasText !important; --tg-muted:CanvasText !important; --tg-root:Canvas !important; --tg-panel:Canvas !important; --tg-side:Canvas !important; --tg-toolbar:Canvas !important; --tg-card:Canvas !important; --tg-ai-card:Canvas !important; --tg-input:Canvas !important; --tg-popup:Canvas !important; }
+}
+
+:root[tais-zotero-glass][data-tg-top="yes"][data-tg-dialog="yes"] { background:rgb(var(--tg-rgb) / var(--tg-dialog-alpha,82%)) !important; }
+:root[tais-zotero-glass] :is(#zotero-pane-stack,#zotero-item-pane,#zotero-context-pane-inner,browser) { background-color:transparent !important; }
+:root[tais-zotero-glass] :is(.annotation,.margin-annotation-card,.a4p-card,.cm-paper-row,.reference-item,.view-popup,.modal-popup):not(.image-popup) {border-radius:var(--tg-radius,7px) !important;}
+:root[tais-zotero-glass] :is(.view-popup,.modal-popup,.find-popup,.context-menu):not(.image-popup) {backdrop-filter:blur(var(--tg-popup-blur,8px));}
+:root[tais-zotero-glass][data-tg-stripes="yes"] #zotero-items-tree .row.odd:not(.selected):not([aria-selected="true"]) {background:rgb(var(--tg-edge) / 3%) !important;}
+:root[tais-zotero-glass][data-tg-thin-scroll="yes"] {scrollbar-width:thin;scrollbar-color:rgb(var(--tg-edge) / 40%) transparent;}
+:root[tais-zotero-glass][data-tg-reduce-motion="yes"] :is(button,toolbarbutton,.annotation,.view-popup,.modal-popup) {transition:none !important;animation:none !important;}
+:root[tais-zotero-glass] :is(input,textarea)[aria-invalid="true"] {border-color:var(--color-accent-red,#b94c4c) !important;}
+
+
+
+/* Unified Glass contract. Background paint may have alpha; text never inherits an alpha fade. */
+/* Dark surfaces are calculated by dark-policy.js and dark-refinement.css. */
+:root[tais-zotero-glass] :is(#zotero-item-pane,#zotero-context-pane) :is(label,.meta-data-label,.metadata-label,.field-label,.section-title,.section-header){color:var(--tg-muted)!important;opacity:1!important;text-shadow:none!important;}
+@-moz-document url-prefix("resource://zotero/reader/reader.html"){
+ :root[tais-zotero-glass] :is(.primary-view,.secondary-view,.view,.pdf-view,iframe){background-color:transparent!important;}
+}
+
+/* Dark surfaces are calculated by dark-policy.js and dark-refinement.css. */
+

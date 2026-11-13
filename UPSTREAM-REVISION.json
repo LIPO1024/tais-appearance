@@ -1,0 +1,19 @@
+{
+  "repository": "https://github.com/northword/zotero-mica",
+  "commit": "eb35b3e6f091e2e46d49fe7665230a5dc387e2ce",
+  "commitDate": "2026-09-03",
+  "license": "AGPL-3.0 (upstream LICENSE preserved)",
+  "includedPaths": [
+    "addon/",
+    "src/",
+    "typings/",
+    "LICENSE",
+    "README.md",
+    "package.json",
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml",
+    "tsconfig.json",
+    "zotero-plugin.config.ts",
+    "AGENTS.md"
+  ]
+}
