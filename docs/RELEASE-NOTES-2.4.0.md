@@ -38,6 +38,6 @@ Distributed under the applicable GNU AGPL terms. Upstream Mica for Zotero notice
 
 ## Package verification
 
-- XPI size: 298,698 bytes
-- SHA-256: 869b835c4e09a0102dd4d484dfaf9d544ad8476f63151acc5ca3e64171342e07
+- XPI size: 298,403 bytes
+- SHA-256: 0616024d5c489c10e3dff1267a1f319b3ed1e1e8869dc6c16b56ba65ed06662a
 - Reproducible local build and archive integrity: passed

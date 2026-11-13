@@ -27,12 +27,12 @@ The connected Windows device reports Windows 11 Home China build 26300. The acti
 
 - Version: 2.4.0 Stable
 - Package: dist/TAIS_Appearance-2.4.0.xpi
-- Size: 298,698 bytes
-- SHA-256: 869b835c4e09a0102dd4d484dfaf9d544ad8476f63151acc5ca3e64171342e07
+- Size: 298,403 bytes
+- SHA-256: 0616024d5c489c10e3dff1267a1f319b3ed1e1e8869dc6c16b56ba65ed06662a
 - Packaged files: 61
 - JavaScript files checked: 18
 - CSS files checked: 7
-- Reproducible build: passed
+- Reproducible build: passed (Python 3.12.13 local package exactly matches the published Python 3.12.16 release asset byte-for-byte)
 - XPI archive integrity: passed
 
 - Version: 2.4.0
@@ -50,7 +50,7 @@ The connected Windows device reports Windows 11 Home China build 26300. The acti
 - Five-locale coverage: 6 groups
 - Showcase: 6 groups
 - Reader safety invariants: 9 groups
-- Reproducible package and XPI integrity: checked by build.py
+- Reproducible package and XPI integrity: checked by build.py; local Python 3.12 build matches the published asset exactly
 
 Automated locale coverage is not native-speaker review. The five translations remain drafts pending external linguistic review.
 
