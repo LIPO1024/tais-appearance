@@ -26,7 +26,7 @@ def csscheck(rules):
   elif r.type=='at-rule' and r.content is not None:csscheck(tinycss2.parse_rule_list(r.content,skip_comments=True,skip_whitespace=True))
 for p in R.rglob('*.css'):csscheck(tinycss2.parse_stylesheet(p.read_text(encoding='utf8'),skip_comments=True,skip_whitespace=True))
 ET.fromstring('<root xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">'+(R/'content/preferences.xhtml').read_text(encoding='utf8')+'</root>')
-for test in ['contract-test.cjs','paper-test.cjs','test-dark.cjs','test-appearance.cjs','test-ui-2.2.cjs','test-reliability-2.2.cjs','test-brand.cjs','test-i18n.cjs','test-showcase.cjs','test-reader-safety.cjs','test-release-metadata.cjs']:
+for test in ['contract-test.cjs','paper-test.cjs','test-dark.cjs','test-appearance.cjs','test-ui-2.2.cjs','test-reliability-2.2.cjs','test-brand.cjs','test-i18n.cjs','test-showcase.cjs','test-reader-safety.cjs','test-release-metadata.cjs','test-display-policy.cjs']:
  p=W/test
  if not p.exists():raise FileNotFoundError('Required test suite missing: '+test)
  if p.exists():
@@ -45,5 +45,6 @@ make(target);verify=W/'reproducibility-check.xpi';make(verify)
 sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 assert sha(target)==sha(verify);verify.unlink()
 with zipfile.ZipFile(target)as z:assert z.testzip() is None
-report={'version':V,'publicBuild':args.public,'package':str(target),'bytes':target.stat().st_size,'sha256':sha(target),'files':len(files),'reproducibleInEnvironment':True,'javascriptFiles':len(list(R.rglob('*.js'))),'cssFiles':len(list(R.rglob('*.css'))),'releaseBlockers':[] if args.public else ['local update URL','public repository/support URLs not configured','release and licensing review pending','cross-machine beta acceptance pending']}
+development=(W/'release-plan.json').exists()
+report={'developmentCandidate':development,'version':V,'publicBuild':args.public,'package':str(target),'bytes':target.stat().st_size,'sha256':sha(target),'files':len(files),'reproducibleInEnvironment':True,'javascriptFiles':len(list(R.rglob('*.js'))),'cssFiles':len(list(R.rglob('*.css'))),'releaseBlockers':['development candidate; native-host acceptance incomplete'] if development else [] if args.public else ['local update URL','public repository/support URLs not configured','release and licensing review pending','cross-machine beta acceptance pending']}
 (W/'build-result.json').write_text(json.dumps(report,indent=2),encoding='utf8');print(json.dumps(report,indent=2))

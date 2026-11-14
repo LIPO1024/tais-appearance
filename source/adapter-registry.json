@@ -1,6 +1,6 @@
 {
   "product": "TAIS Appearance",
-  "version": "2.4.1",
+  "version": "2.5.0beta1",
   "host": "Tested locally: Windows 11 / Zotero 10.0.8 / PDF.js 5.7.0",
   "architecture": {
     "universal": "Known Zotero chrome UI and explicitly fingerprinted local tool documents; not all windows",
@@ -100,7 +100,7 @@
     "1.4.2 adds reversible native PDF dark-theme coordination and exact item-pane-sidenav color/selection treatment; unknown platforms fail closed."
   ],
   "legacyProduct": "TAIS Zotero Glass",
-  "releaseStage": "Stable · Windows 11 / Zotero 10.0.8 target",
+  "releaseStage": "Development beta candidate; new host acceptance pending",
   "stableAddOnId": "tais-zotero-glass@tais.local",
   "safeMode": {
     "preference": "extensions.taisZoteroGlass.safe-mode",

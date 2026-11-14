@@ -21,6 +21,11 @@ jobs:
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
         with:
           node-version: "24"
+      - name: Refuse development candidates in stable workflow
+        shell: pwsh
+        run: |
+          $v = (Get-Content source/manifest.json -Raw | ConvertFrom-Json).version
+          if ($v -notmatch "^\d+\.\d+\.\d+$" -or (Test-Path release-plan.json)) { throw "Development candidate cannot use the Stable release workflow" }
       - name: Install build dependencies
         run: python -m pip install -r requirements-build.txt
       - name: Create reviewed public build configuration

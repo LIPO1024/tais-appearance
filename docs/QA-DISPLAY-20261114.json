@@ -1,0 +1,408 @@
+{
+  "schema": "tais-isolated-host/1",
+  "profileIsolated": true,
+  "os": "windows",
+  "zoteroVersion": "10.0.8",
+  "candidateVersion": "2.5.0beta1",
+  "pdfjsVersion": "5.7.0",
+  "completedChecksPassed": true,
+  "acceptanceComplete": false,
+  "limitations": [
+    "No physical printing",
+    "No OS accessibility preference toggles",
+    "No eight-hour soak",
+    "No macOS host",
+    "No system DPI-setting changes",
+    "Native selection, clipboard and annotation editing need a Zotero-specific interaction probe"
+  ],
+  "tests": [
+    {
+      "name": "isolated candidate startup",
+      "passed": true,
+      "display": [
+        {
+          "dpr": 1.25,
+          "mediaReadable": true,
+          "forcedColors": false,
+          "reducedTransparency": false,
+          "reducedMotion": false,
+          "increasedContrast": false,
+          "policy": {
+            "platform": "windows",
+            "nativeMaterial": true,
+            "fallback": null,
+            "reason": null,
+            "reducedMotion": false,
+            "increasedContrast": false
+          },
+          "events": 0,
+          "lastError": null
+        }
+      ]
+    },
+    {
+      "name": "original PDF native canvas rendered",
+      "passed": true,
+      "state": {
+        "dpr": 1.25,
+        "readerDpr": 1.25,
+        "scale": 0.6778125,
+        "canvasWidth": 675,
+        "canvasHeight": 900,
+        "pdfSourceMarker": true,
+        "rendered": true,
+        "singleCanvas": true,
+        "opacity": "1",
+        "filter": "none",
+        "overlays": 0,
+        "display": [
+          {
+            "dpr": 1.25,
+            "mediaReadable": true,
+            "forcedColors": false,
+            "reducedTransparency": false,
+            "reducedMotion": false,
+            "increasedContrast": false,
+            "policy": {
+              "platform": "windows",
+              "nativeMaterial": true,
+              "fallback": null,
+              "reason": null,
+              "reducedMotion": false,
+              "increasedContrast": false
+            },
+            "events": 0,
+            "lastError": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "PDF.js native zoom 0.75",
+      "passed": true,
+      "state": {
+        "dpr": 1.25,
+        "readerDpr": 1.25,
+        "scale": 0.75,
+        "canvasWidth": 750,
+        "canvasHeight": 1000,
+        "pdfSourceMarker": true,
+        "rendered": true,
+        "singleCanvas": true,
+        "opacity": "1",
+        "filter": "none",
+        "overlays": 0,
+        "display": [
+          {
+            "dpr": 1.25,
+            "mediaReadable": true,
+            "forcedColors": false,
+            "reducedTransparency": false,
+            "reducedMotion": false,
+            "increasedContrast": false,
+            "policy": {
+              "platform": "windows",
+              "nativeMaterial": true,
+              "fallback": null,
+              "reason": null,
+              "reducedMotion": false,
+              "increasedContrast": false
+            },
+            "events": 0,
+            "lastError": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "PDF.js native zoom 1",
+      "passed": true,
+      "state": {
+        "dpr": 1.25,
+        "readerDpr": 1.25,
+        "scale": 1,
+        "canvasWidth": 1000,
+        "canvasHeight": 1330,
+        "pdfSourceMarker": true,
+        "rendered": true,
+        "singleCanvas": true,
+        "opacity": "1",
+        "filter": "none",
+        "overlays": 0,
+        "display": [
+          {
+            "dpr": 1.25,
+            "mediaReadable": true,
+            "forcedColors": false,
+            "reducedTransparency": false,
+            "reducedMotion": false,
+            "increasedContrast": false,
+            "policy": {
+              "platform": "windows",
+              "nativeMaterial": true,
+              "fallback": null,
+              "reason": null,
+              "reducedMotion": false,
+              "increasedContrast": false
+            },
+            "events": 0,
+            "lastError": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "PDF.js native zoom 1.5",
+      "passed": true,
+      "state": {
+        "dpr": 1.25,
+        "readerDpr": 1.25,
+        "scale": 1.5,
+        "canvasWidth": 1500,
+        "canvasHeight": 2000,
+        "pdfSourceMarker": true,
+        "rendered": true,
+        "singleCanvas": true,
+        "opacity": "1",
+        "filter": "none",
+        "overlays": 0,
+        "display": [
+          {
+            "dpr": 1.25,
+            "mediaReadable": true,
+            "forcedColors": false,
+            "reducedTransparency": false,
+            "reducedMotion": false,
+            "increasedContrast": false,
+            "policy": {
+              "platform": "windows",
+              "nativeMaterial": true,
+              "fallback": null,
+              "reason": null,
+              "reducedMotion": false,
+              "increasedContrast": false
+            },
+            "events": 0,
+            "lastError": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "PDF.js native zoom 2",
+      "passed": true,
+      "state": {
+        "dpr": 1.25,
+        "readerDpr": 1.25,
+        "scale": 2,
+        "canvasWidth": 2000,
+        "canvasHeight": 2665,
+        "pdfSourceMarker": true,
+        "rendered": true,
+        "singleCanvas": true,
+        "opacity": "1",
+        "filter": "none",
+        "overlays": 0,
+        "display": [
+          {
+            "dpr": 1.25,
+            "mediaReadable": true,
+            "forcedColors": false,
+            "reducedTransparency": false,
+            "reducedMotion": false,
+            "increasedContrast": false,
+            "policy": {
+              "platform": "windows",
+              "nativeMaterial": true,
+              "fallback": null,
+              "reason": null,
+              "reducedMotion": false,
+              "increasedContrast": false
+            },
+            "events": 0,
+            "lastError": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "native Zotero selection and clipboard",
+      "passed": null,
+      "status": "not-run",
+      "reason": "This Zotero host uses customAnnotationLayer and has no standard PDF.js textLayer; extraction is not selection."
+    },
+    {
+      "name": "isolated window move",
+      "passed": true,
+      "requested": {
+        "x": 50,
+        "y": 50
+      },
+      "actual": {
+        "x": 50,
+        "y": 50
+      },
+      "state": {
+        "dpr": 1.25,
+        "readerDpr": 1.25,
+        "scale": 2,
+        "canvasWidth": 2000,
+        "canvasHeight": 2665,
+        "pdfSourceMarker": true,
+        "rendered": true,
+        "singleCanvas": true,
+        "opacity": "1",
+        "filter": "none",
+        "overlays": 0,
+        "display": [
+          {
+            "dpr": 1.25,
+            "mediaReadable": true,
+            "forcedColors": false,
+            "reducedTransparency": false,
+            "reducedMotion": false,
+            "increasedContrast": false,
+            "policy": {
+              "platform": "windows",
+              "nativeMaterial": true,
+              "fallback": null,
+              "reason": null,
+              "reducedMotion": false,
+              "increasedContrast": false
+            },
+            "events": 0,
+            "lastError": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "isolated window move",
+      "passed": true,
+      "requested": {
+        "x": 50,
+        "y": -700
+      },
+      "actual": {
+        "x": 50,
+        "y": -700
+      },
+      "state": {
+        "dpr": 1.25,
+        "readerDpr": 1.25,
+        "scale": 2,
+        "canvasWidth": 2000,
+        "canvasHeight": 2665,
+        "pdfSourceMarker": true,
+        "rendered": true,
+        "singleCanvas": true,
+        "opacity": "1",
+        "filter": "none",
+        "overlays": 0,
+        "display": [
+          {
+            "dpr": 1.25,
+            "mediaReadable": true,
+            "forcedColors": false,
+            "reducedTransparency": false,
+            "reducedMotion": false,
+            "increasedContrast": false,
+            "policy": {
+              "platform": "windows",
+              "nativeMaterial": true,
+              "fallback": null,
+              "reason": null,
+              "reducedMotion": false,
+              "increasedContrast": false
+            },
+            "events": 0,
+            "lastError": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "isolated window move",
+      "passed": true,
+      "requested": {
+        "x": 50,
+        "y": 50
+      },
+      "actual": {
+        "x": 50,
+        "y": 50
+      },
+      "state": {
+        "dpr": 1.25,
+        "readerDpr": 1.25,
+        "scale": 2,
+        "canvasWidth": 2000,
+        "canvasHeight": 2665,
+        "pdfSourceMarker": true,
+        "rendered": true,
+        "singleCanvas": true,
+        "opacity": "1",
+        "filter": "none",
+        "overlays": 0,
+        "display": [
+          {
+            "dpr": 1.25,
+            "mediaReadable": true,
+            "forcedColors": false,
+            "reducedTransparency": false,
+            "reducedMotion": false,
+            "increasedContrast": false,
+            "policy": {
+              "platform": "windows",
+              "nativeMaterial": true,
+              "fallback": null,
+              "reason": null,
+              "reducedMotion": false,
+              "increasedContrast": false
+            },
+            "events": 0,
+            "lastError": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "Safe Mode suppresses display policy",
+      "passed": true,
+      "display": [
+        {
+          "dpr": 1.25,
+          "mediaReadable": true,
+          "forcedColors": false,
+          "reducedTransparency": false,
+          "reducedMotion": false,
+          "increasedContrast": false,
+          "policy": {
+            "platform": "windows",
+            "nativeMaterial": false,
+            "fallback": "native-opaque",
+            "reason": "safe-mode",
+            "reducedMotion": false,
+            "increasedContrast": false
+          },
+          "events": 0,
+          "lastError": null
+        }
+      ]
+    },
+    {
+      "name": "appearance preferences unchanged after test",
+      "passed": true
+    }
+  ],
+  "testBuild": "Instrumented isolated copy: only bootstrap test entry and qa-host-probe.js differ from candidate",
+  "nativeSelectionStatus": "not verified; customAnnotationLayer is not a standard PDF.js DOM textLayer",
+  "displayTransitionStatus": "Two display positions visited, but measured DPR remained 1.25 on both; mixed-DPI not verified",
+  "attemptNotes": [
+    "Initial generic .textLayer selection probe was inapplicable to this Zotero host and failed.",
+    "A separate cross-compartment getTextContent call needed Cu.waiveXrays in the probe, not a product-code change.",
+    "Final results keep native selection/clipboard explicitly not-run rather than counting PDF text extraction as selection."
+  ],
+  "passedChecks": 11,
+  "notRunChecks": 1
+}

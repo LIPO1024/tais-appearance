@@ -15,7 +15,7 @@ function registerEarlyTransparencySheet(rootURI) {
     const sheetService = Components.classes["@mozilla.org/content/style-sheet-service;1"]
       .getService(Components.interfaces.nsIStyleSheetService);
     const sheetType = Components.interfaces.nsIStyleSheetService.AGENT_SHEET;
-    for (const file of ["glass.css", "surface-130.css", "tool-surfaces.css"]) {
+    for (const file of ["glass.css", "surface-130.css", "tool-surfaces.css", "display-policy.css"]) {
       const uri = Services.io.newURI(baseURI + "content/" + file);
       if (!sheetService.sheetRegistered(uri, sheetType)) sheetService.loadAndRegisterSheet(uri, sheetType);
     }
@@ -52,7 +52,7 @@ async function startup({ id, version, resourceURI, rootURI }, reason) {
 
   Services.scriptloader.loadSubScript(baseURI + "content/scripts/taisglass.js", ctx);
   Services.scriptloader.loadSubScript(baseURI + "content/workbench.js", ctx);
-  for (const file of ["paper-core.js", "background.js", "builtin-background.js", "reading.js", "focus.js", "studio.js", "settings-core.js", "inspector.js", "localization.js", "settings-ui.js", "dark-policy.js", "tool-surfaces.js", "integration.js", "typography.js"]) {
+  for (const file of ["paper-core.js", "background.js", "builtin-background.js", "reading.js", "focus.js", "studio.js", "settings-core.js", "inspector.js", "localization.js", "settings-ui.js", "dark-policy.js", "tool-surfaces.js", "integration.js", "typography.js", "display-policy.js", "display-runtime.js"]) {
     Services.scriptloader.loadSubScript(baseURI + "content/" + file, ctx);
   }
   await Zotero.TAISZoteroGlass.hooks.onStartup();

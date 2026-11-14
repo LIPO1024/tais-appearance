@@ -1,5 +1,5 @@
 /* TAIS Glass workbench 1.2.0. Appearance settings only; no library/annotation writes. */
-var TG_VERSION='2.4.1';
+var TG_VERSION='2.5.0beta1';
 var TG_NUM={
  'window-opacity':{label:'浅色 · 窗口底色',section:'surface',value:8,min:0,max:100,unit:'%',css:'--tais-window-alpha'},
  'sidebar-opacity':{label:'分类与左右侧栏',section:'surface',value:12,min:0,max:100,unit:'%',css:'--tais-sidebar-alpha'},

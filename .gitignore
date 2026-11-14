@@ -18,3 +18,5 @@ build-result.json
 reproducibility-check.xpi
 release-config.json
 release-config.local.json
+/qa-local/
+__pycache__/
