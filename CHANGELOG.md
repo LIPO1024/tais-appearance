@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.4.1 — Update and release hardening
+
+- Fix the source manifest update URL so locally built XPI packages no longer point to localhost.
+- Add the public product homepage to the source manifest and validate update metadata against the published XPI URL.
+- Add automated release-metadata consistency tests to the required build and CI checks.
+- Make release automation version-driven, tag-checked, and safe against overwriting an existing release.
+- Pin GitHub Actions to reviewed immutable commit SHAs and update artifact upload to the Node 24-compatible v6 release.
+- Add weekly Dependabot checks for GitHub Actions and Python build dependencies.
+- Correct two obvious Japanese/Korean README grammar errors without claiming native-speaker review.
+
 ## 2.4.0 — Stable · Windows
 
 - Establish a shared platform-adapter architecture and publish a verified compatibility matrix.
