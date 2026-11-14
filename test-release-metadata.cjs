@@ -17,4 +17,13 @@ for(const file of ['README.md','README.en-US.md','README.zh-CN.md','README.ja-JP
  assert(!content.includes('2.4.0'),file+' must not retain stale 2.4.0 release references');
 }
 assert(!fs.readFileSync(path.join(root,'source/manifest.json'),'utf8').includes('localhost'),'Source manifest must never point to localhost');
-console.log('Release metadata and public version references: passed ('+version+')');
+
+for(const file of ['README.md','README.en-US.md','README.zh-CN.md','README.ja-JP.md','README.ko-KR.md','README.fr-FR.md','docs/USER_GUIDE.zh-CN.md','docs/USER_GUIDE.en-US.md','docs/USER_GUIDE.ja-JP.md','docs/USER_GUIDE.ko-KR.md','docs/USER_GUIDE.fr-FR.md']){
+ const source=fs.readFileSync(path.join(root,file),'utf8');
+ for(const match of source.matchAll(/\\[[^\\]]+\\]\\(([^)]+)\\)/g)){
+  const target=match[1].split('#')[0];
+  if(!target||/^(https?:|mailto:|#)/i.test(target))continue;
+  assert(fs.existsSync(path.resolve(root,path.dirname(file),target)),file+' has a broken local link: '+target);
+ }
+}
+console.log('Release metadata, localized links, and public version references: passed ('+version+')');
