@@ -36,8 +36,10 @@ jobs:
           } | ConvertTo-Json
           [System.IO.File]::WriteAllText("${{ runner.temp }}/tais-release-config.json", $config, [System.Text.UTF8Encoding]::new($false))
       - name: Build exact release package
+        id: build-release
         run: python build.py --public --config ${{ runner.temp }}/tais-release-config.json --out dist
       - name: Generate SHA-256 checksum
+        id: release-metadata
         shell: pwsh
         run: |
           $version = (Get-Content source/manifest.json -Raw | ConvertFrom-Json).version
@@ -54,4 +56,4 @@ jobs:
           gh release view "${{ github.ref_name }}" --repo "${{ github.repository }}" 2>$null
           if ($LASTEXITCODE -eq 0) { throw "Release ${{ github.ref_name }} already exists; refusing to overwrite published assets." }
           if ($LASTEXITCODE -ne 1) { throw "Unable to verify existing release state." }
-          gh release create "${{ github.ref_name }}" ("dist/TAIS_Appearance-" + "${{ steps.build-release.outputs.version }}" + ".xpi") dist/SHA256SUMS.txt --repo "${{ github.repository }}" --title "TAIS Appearance ${{ github.ref_name }}" --generate-notes
+          gh release create "${{ github.ref_name }}" ("dist/TAIS_Appearance-" + "${{ steps.release-metadata.outputs.version }}" + ".xpi") dist/SHA256SUMS.txt --repo "${{ github.repository }}" --title "TAIS Appearance ${{ github.ref_name }}" --generate-notes
