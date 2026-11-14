@@ -8,4 +8,10 @@ assert.equal(manifest.applications.zotero.update_url,'https://raw.githubusercont
 assert.equal(manifest.homepage_url,'https://lipo1024.github.io/tais-appearance/','Packaged manifest must expose the public product homepage');
 assert.equal(manifest.applications.zotero.strict_min_version,entry.applications.zotero.strict_min_version);
 assert.equal(manifest.applications.zotero.strict_max_version,entry.applications.zotero.strict_max_version);
-console.log('Release metadata consistency: passed ('+version+')');
+for(const file of ['README.md','README.en-US.md','README.zh-CN.md','README.ja-JP.md','README.ko-KR.md','README.fr-FR.md','index.html','showcase/index.html']){
+ const content=fs.readFileSync(path.join(root,file),'utf8');
+ assert(content.includes(version),file+' must advertise the current manifest version');
+ assert(!content.includes('2.4.0'),file+' must not retain stale 2.4.0 release references');
+}
+assert(!fs.readFileSync(path.join(root,'source/manifest.json'),'utf8').includes('localhost'),'Source manifest must never point to localhost');
+console.log('Release metadata and public version references: passed ('+version+')');
