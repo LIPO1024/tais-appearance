@@ -59,7 +59,7 @@ jobs:
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
         with:
           name: TAIS-Appearance-${{ runner.os }}-${{ github.sha }}
-          path: dist/TAIS_Appearance-2.4.0.xpi
+          path: dist/TAIS_Appearance-2.4.1.xpi
           if-no-files-found: error
           retention-days: 14
   security-hygiene:
