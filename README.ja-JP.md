@@ -33,7 +33,7 @@ TAIS Appearance は、半透明のインターフェース、ライト／ダー�
 
 ## 無料・オープンソース
 
-TAIS Appearance は**無料のオープンソースプロジェクト**です。開発者は利用者に料金を請求しませんです。
+TAIS Appearance は**無料のオープンソースプロジェクト**です。開発者は利用者に料金を請求しません。
 
 - すべてのテーマとコア機能を無料で利用できます。
 - 有料版、会員制、ライセンスキー、テーマ制限、機能制限はありません。
@@ -58,7 +58,7 @@ TAIS Appearance は**無料のオープンソースプロジェクト**です。
 
 ## インストール
 
-[TAIS Appearance 2.4.0 Stable（XPI）をダウンロード](https://github.com/LIPO1024/tais-appearance/releases/download/v2.4.0/TAIS_Appearance-2.4.0.xpi)
+[TAIS Appearance 2.4.1 Stable（XPI）をダウンロード](https://github.com/LIPO1024/tais-appearance/releases/download/v2.4.1/TAIS_Appearance-2.4.1.xpi)
 
 Zotero の「ツール → プラグイン → 歯車 → ファイルからプラグインをインストール」で XPI を選択します。Windows 11 / Zotero 10.0.8 / PDF.js 5.7.0 を検証対象とする Stable 版です。メインのプロファイルを更新する前に設定をエクスポートしてください。その他のプラットフォームや未記載の Zotero バージョンは未対応または未検証です。
 
