@@ -1,4 +1,4 @@
-# TAIS Appearance 2.4.1 — Maintenance release candidate
+# TAIS Appearance 2.4.1 Stable — Maintenance release
 
 This patch corrects distribution metadata and strengthens release automation. It does not expand the theme collection or redesign the approved interface.
 
@@ -19,6 +19,15 @@ The supported native-material target remains Windows 11 / Zotero 10.0.8 / PDF.js
 
 All 12 themes, appearance preferences, local backgrounds, profiles, undo/recovery, Safe Mode, AGPL terms, upstream notices, and PDF.js rendering behavior are preserved.
 
+## Verification
+
+- GitHub Actions CI: Windows, macOS, and Ubuntu static builds all passed.
+- Repository hygiene checks passed.
+- GitHub Pages deployment passed; the live product page returns HTTP 200 and advertises 2.4.1.
+- Release workflow passed; XPI archive and SHA-256 checksum uploaded successfully.
+- XPI size: 298,438 bytes.
+- SHA-256: 95c5679def5e2dfcb49a66ea81f3bb7827e2d7438a88723f6700e88cc8605e69.
+
 ## Verification gate
 
-The candidate must pass the complete build suite, release metadata and link checks, GitHub CI on Windows/macOS/Linux, and Pages deployment checks before a v2.4.1 Stable tag is created.
+The candidate must pass the complete build suite, release metadata and link checks, GitHub CI on Windows/macOS/Linux, and Pages deployment checks passed before the v2.4.1 Stable release.
