@@ -79,7 +79,7 @@ TAIS Appearance 是一个**免费开源项目**，维护者不向用户收费。
 
 ## 安装
 
-**当前公开版本：** [TAIS Appearance 2.4.0 Stable（XPI）](https://github.com/LIPO1024/tais-appearance/releases/download/v2.4.0/TAIS_Appearance-2.4.0.xpi) · [版本说明与校验值](https://github.com/LIPO1024/tais-appearance/releases/tag/v2.4.0)
+**当前公开版本：** [TAIS Appearance 2.4.1 Stable（XPI）](https://github.com/LIPO1024/tais-appearance/releases/download/v2.4.1/TAIS_Appearance-2.4.1.xpi) · [版本说明与校验值](https://github.com/LIPO1024/tais-appearance/releases/tag/v2.4.1)
 
 1. 下载 XPI 安装包。
 2. 在 Zotero 中打开“工具 → 插件”。

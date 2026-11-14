@@ -58,7 +58,7 @@ La couverture automatique des traductions est vérifiée, mais une relecture par
 
 ## Installation
 
-[Télécharger TAIS Appearance 2.4.0 Stable (.xpi)](https://github.com/LIPO1024/tais-appearance/releases/download/v2.4.0/TAIS_Appearance-2.4.0.xpi)
+[Télécharger TAIS Appearance 2.4.1 Stable (.xpi)](https://github.com/LIPO1024/tais-appearance/releases/download/v2.4.1/TAIS_Appearance-2.4.1.xpi)
 
 Dans Zotero, ouvrez Outils → Extensions → menu engrenage → Installer depuis un fichier, puis sélectionnez le XPI. Cette version Stable est validée pour Windows 11 / Zotero 10.0.8 / PDF.js 5.7.0. Exportez vos paramètres avant de mettre à jour votre profil principal ; les autres plateformes et versions de Zotero non listées ne sont pas prises en charge ou vérifiées.
 

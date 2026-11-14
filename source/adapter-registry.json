@@ -1,6 +1,6 @@
 {
   "product": "TAIS Appearance",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "host": "Tested locally: Windows 11 / Zotero 10.0.8 / PDF.js 5.7.0",
   "architecture": {
     "universal": "Known Zotero chrome UI and explicitly fingerprinted local tool documents; not all windows",
