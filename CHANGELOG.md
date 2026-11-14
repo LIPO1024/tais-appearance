@@ -6,7 +6,12 @@
 - Expose the localization service for diagnostics.
 - Correct the Korean Appearance navigation label to native Hangul.
 - Add regression coverage for preference branch, invalid locale fallback, and five-language navigation.
-- Preserve the 2.4.0 free/open-source distribution policy; all 12 themes remain available to all users.
+- Fix the source manifest update URL and include the public product homepage.
+- Add release metadata, version, and localized documentation link checks to every build.
+- Pin GitHub Actions, restrict permissions, set job timeouts, and prevent overwriting existing releases.
+- Add weekly Dependabot updates for Actions and Python build dependencies.
+- Correct two obvious Japanese and Korean README grammar errors.
+- Preserve the free/open-source distribution policy; all 12 themes remain available to all users.
 
 
 ## 2.4.0 — Stable · Windows
