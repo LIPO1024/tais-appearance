@@ -9,10 +9,11 @@ Describe the user problem and the smallest change that addresses it.
 - [ ] Recovery / Safe Mode behavior considered
 
 ## Verification
-- [ ] `python build.py --public --config release-config.json --out dist`
+- [ ] `python build.py`
 - [ ] `node test-i18n.cjs`
 - [ ] `node test-showcase.cjs`
 - [ ] `node test-brand.cjs`
+- [ ] `node test-release-metadata.cjs`
 - [ ] Additional tests listed below
 
 ## Platforms actually tested
