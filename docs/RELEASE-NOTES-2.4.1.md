@@ -30,4 +30,4 @@ All 12 themes, appearance preferences, local backgrounds, profiles, undo/recover
 
 ## Verification gate
 
-The candidate must pass the complete build suite, release metadata and link checks, GitHub CI on Windows/macOS/Linux, and Pages deployment checks passed before the v2.4.1 Stable release.
+All release gates passed: the complete build suite, release metadata and documentation-link checks, GitHub CI on Windows/macOS/Linux, and GitHub Pages deployment.
