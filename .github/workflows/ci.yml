@@ -55,7 +55,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: TAIS-Appearance-${{ runner.os }}-${{ github.sha }}
-          path: dist/TAIS_Appearance-2.4.0.xpi
+          path: dist/TAIS_Appearance-*.xpi
           if-no-files-found: error
           retention-days: 14
   security-hygiene:
