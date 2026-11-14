@@ -3,9 +3,9 @@ from pathlib import Path
 import argparse,json,zipfile,hashlib,subprocess,sys,xml.etree.ElementTree as ET
 from urllib.parse import urlparse
 import tinycss2
-W=Path(__file__).resolve().parent;R=W/'source';V='2.4.1'
+W=Path(__file__).resolve().parent;R=W/'source';m=json.loads((R/'manifest.json').read_text(encoding='utf8'));V=m['version']
 parser=argparse.ArgumentParser();parser.add_argument('--public',action='store_true');parser.add_argument('--config',type=Path);parser.add_argument('--out',type=Path,default=W.parent/'release');args=parser.parse_args()
-m=json.loads((R/'manifest.json').read_text(encoding='utf8'));assert m['version']==V
+assert isinstance(V,str) and V.strip()
 if args.public:
  if not args.config:raise SystemExit('PUBLIC BUILD BLOCKED: provide --config with reviewed publication URLs.')
  c=json.loads(args.config.read_text(encoding='utf8'))
