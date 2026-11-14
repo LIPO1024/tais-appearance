@@ -79,7 +79,7 @@ Automated locale coverage is complete as a draft; native-speaker review is still
 
 ## Install
 
-**Current public build: [TAIS Appearance 2.4.0 Stable (.xpi)](https://github.com/LIPO1024/tais-appearance/releases/download/v2.4.0/TAIS_Appearance-2.4.0.xpi)** · [Release notes and checksum](https://github.com/LIPO1024/tais-appearance/releases/tag/v2.4.0)
+**Current public build: [TAIS Appearance 2.4.1 Stable (.xpi)](https://github.com/LIPO1024/tais-appearance/releases/download/v2.4.1/TAIS_Appearance-2.4.1.xpi)** · [Release notes and checksum](https://github.com/LIPO1024/tais-appearance/releases/tag/v2.4.1)
 
 1. Download the XPI.
 2. In Zotero, open **Tools → Plugins**.
