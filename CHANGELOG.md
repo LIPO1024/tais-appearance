@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.4.1 — Unreleased
+## 2.4.1 — Stable
 
 - Fix localization preference reads/writes to use Zotero's extension preference branch.
 - Expose the localization service for diagnostics.
