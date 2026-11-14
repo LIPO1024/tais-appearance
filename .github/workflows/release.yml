@@ -2,20 +2,23 @@ name: Release
 on:
   push:
     tags:
-      - "v2.*"
+      - "v*"
 permissions:
   contents: write
 jobs:
   build-release:
+    permissions:
+      contents: write
+    timeout-minutes: 20
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-python@v6
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+      - uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c
         with:
           python-version: "3.12"
           cache: pip
           cache-dependency-path: requirements-build.txt
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444
         with:
           node-version: "24"
       - name: Install build dependencies
@@ -24,7 +27,7 @@ jobs:
         shell: pwsh
         run: |
           $config = @{
-            homepage_url = "https://github.com/LIPO1024/tais-appearance"
+            homepage_url = "https://lipo1024.github.io/tais-appearance/"
             update_url = "https://raw.githubusercontent.com/LIPO1024/tais-appearance/main/updates.json"
             source_url = "https://github.com/LIPO1024/tais-appearance"
             support_url = "https://github.com/LIPO1024/tais-appearance/issues"
@@ -35,9 +38,12 @@ jobs:
       - name: Build exact release package
         run: python build.py --public --config ${{ runner.temp }}/tais-release-config.json --out dist
       - name: Generate SHA-256 checksum
+        id: release-metadata
         shell: pwsh
         run: |
           $manifest = Get-Content source/manifest.json -Raw | ConvertFrom-Json
+          if ("${{ github.ref_name }}" -ne "v$($manifest.version)") { throw "Tag does not match manifest version $($manifest.version)" }
+          "version=$($manifest.version)" | Out-File -Append -Encoding utf8 $env:GITHUB_OUTPUT
           $file = "dist/TAIS_Appearance-$($manifest.version).xpi"
           $hash = (Get-FileHash $file -Algorithm SHA256).Hash.ToLower()
           "$hash  TAIS_Appearance-$($manifest.version).xpi" | Out-File -Encoding ascii dist/SHA256SUMS.txt
@@ -46,6 +52,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         shell: pwsh
         run: |
-          $manifest = Get-Content source/manifest.json -Raw | ConvertFrom-Json
-          $file = "dist/TAIS_Appearance-$($manifest.version).xpi"
-          gh release create "${{ github.ref_name }}" $file dist/SHA256SUMS.txt --title "TAIS Appearance ${{ github.ref_name }}" --generate-notes
+          gh release view "${{ github.ref_name }}" --repo "${{ github.repository }}" 2>$null
+          if ($LASTEXITCODE -eq 0) { throw "Release ${{ github.ref_name }} already exists; refusing to overwrite published assets." }
+          if ($LASTEXITCODE -ne 1) { throw "Unable to verify existing release state." }
+          $file = "dist/TAIS_Appearance-${{ steps.release-metadata.outputs.version }}.xpi"
+          gh release create "${{ github.ref_name }}" $file dist/SHA256SUMS.txt --repo "${{ github.repository }}" --title "TAIS Appearance ${{ github.ref_name }}" --generate-notes
