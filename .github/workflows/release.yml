@@ -27,7 +27,7 @@ jobs:
         shell: pwsh
         run: |
           $config = @{
-            homepage_url = "https://github.com/LIPO1024/tais-appearance"
+            homepage_url = "https://lipo1024.github.io/tais-appearance/"
             update_url = "https://raw.githubusercontent.com/LIPO1024/tais-appearance/main/updates.json"
             source_url = "https://github.com/LIPO1024/tais-appearance"
             support_url = "https://github.com/LIPO1024/tais-appearance/issues"
