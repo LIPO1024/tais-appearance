@@ -17,7 +17,7 @@ This matrix distinguishes code that can build on a platform from native material
 - OS: Windows 11 Home China, build 26300
 - Zotero: 10.0.8 installed and running during inspection
 - PDF.js: 5.7.0 validated in the prior release build
-- Build: 2.4.1 release candidate
+- Build: 2.4.1 Stable
 - Test classes: static build, unit/contract suites, locale coverage, showcase checks
 - Host-only checks not represented by automated build: multiple DPI, multi-monitor transitions, physical printing, long-duration soak, all third-party plugin combinations, macOS AppKit, Linux X11/Wayland.
 
