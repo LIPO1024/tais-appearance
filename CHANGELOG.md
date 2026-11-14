@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.4.1 — Unreleased
+
+- Fix localization preference reads/writes to use Zotero's extension preference branch.
+- Expose the localization service for diagnostics.
+- Correct the Korean Appearance navigation label to native Hangul.
+- Add regression coverage for preference branch, invalid locale fallback, and five-language navigation.
+- Preserve the 2.4.0 free/open-source distribution policy; all 12 themes remain available to all users.
+
+
 ## 2.4.0 — Stable · Windows
 
 - Establish a shared platform-adapter architecture and publish a verified compatibility matrix.

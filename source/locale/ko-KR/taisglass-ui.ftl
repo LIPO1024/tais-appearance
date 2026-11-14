@@ -1,5 +1,5 @@
 ## TAIS Appearance — ko-KR
-tais-ui-001 = 外観
+tais-ui-001 = 외관
 tais-ui-002 = 읽기
 tais-ui-003 = 배경
 tais-ui-004 = 호환성
