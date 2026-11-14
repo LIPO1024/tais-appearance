@@ -1,0 +1,8 @@
+/* Opaque fallback for TAIS-owned chrome roots, not web/PDF content. */
+@-moz-document url("chrome://zotero/content/zoteroPane.xhtml"),url("chrome://zotero/content/reader.xhtml") {
+ @media (forced-colors:active),(prefers-reduced-transparency:reduce) {
+  :root { background-color:Canvas!important; color:CanvasText!important; }
+ }
+}
+:root[data-tg-display-fallback] {background:Canvas!important;color:CanvasText!important;}
+/* Native Zotero styles handle inner content once TAIS surface ownership is removed. */

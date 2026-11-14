@@ -1,5 +1,13 @@
 # Changelog
 
+## Development — 2.5.0beta1 (not publicly released)
+
+- Add per-window DPI/media-policy observation, coalescing and reversible cleanup.
+- Gate native material before applying it in Safe Mode, forced colors and reduced transparency.
+- Keep unsupported OSes out of Windows native probes.
+- Add 20 simulated regression groups and an isolated Zotero host harness.
+- Preserve the 2.4.1 stable feed; native selection, mixed-DPI and macOS acceptance remain incomplete.
+
 ## 2.4.1 — Stable
 
 - Fix localization preference reads/writes to use Zotero's extension preference branch.

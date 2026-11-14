@@ -1,0 +1,10 @@
+{
+  "stage": "development",
+  "sourceVersion": "2.5.0beta1",
+  "publicVersion": "2.4.1",
+  "nativePlatforms": [
+    "windows"
+  ],
+  "hostAcceptance": "pending",
+  "stableAutoUpdateUnchanged": true
+}
